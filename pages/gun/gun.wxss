@@ -1,0 +1,841 @@
+@import "../../common/common.wxss";
+@import "../../common/gun/ticket.wxss";
+
+page {
+  background-color: #eff2f4;
+}
+
+.top {
+  height: 376rpx;
+  width: 100%;
+}
+
+.top image {
+  width: 100%;
+  overflow: hidden;
+  height: 376rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  margin-top: 40rpx;
+  position: relative;
+}
+
+.input view {
+  width: 140rpx;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.input input {
+  height: 100%;
+  position: absolute;
+  left: 140rpx;
+  right: 140rpx;
+  margin: auto;
+}
+
+.oilType {
+  width: 100%;
+  text-align: center;
+  margin-top: 20rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+}
+
+button {
+  margin-top: 20rpx;
+  border-style: none;
+}
+
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  background: #e0e0e0;
+  color: #fff;
+  border-color: transparent;
+  border-style: none;
+}
+
+.button::after {
+  border: 1px solid white;
+  border-color: transparent;
+}
+
+button.login_button {
+  margin-top: 46rpx;
+}
+
+.shade {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+
+.login {
+  width: 622rpx;
+  height: 700rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 118rpx;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  z-index: 88;
+}
+
+.login view {
+  width: 88%;
+  margin-left: 6%;
+  line-height: 70rpx;
+}
+
+.con_box {
+  width: 80%;
+  margin-left: 10%;
+  height: 600rpx;
+}
+
+.login text {
+  font-size: 30rpx;
+}
+
+.text1 {
+  margin: 36rpx 0 0 36rpx;
+  display: block;
+  font-size: 34rpx;
+  color: #222;
+  width: 90%;
+}
+
+.text3 {
+  margin: 22rpx 0 36rpx 36rpx;
+  display: block;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.54);
+  width: 90%;
+}
+
+.login .text2 {
+  padding: 104rpx 0 20rpx 26rpx;
+  display: block;
+}
+
+.login input {
+  height: 104rpx;
+  width: 350rpx;
+  color: #000;
+}
+
+.login .button {
+  width: 170rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  border-radius: 6rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #f93;
+}
+
+.phone_input {
+  width: 80%;
+  height: 104rpx;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  margin-top: 20rpx;
+  display: block;
+  width: 88%;
+  margin-left: 6%;
+}
+
+.logo_grey_view {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+image.logo_grey {
+  width: 140rpx;
+  height: 40rpx;
+  /* margin: 36rpx auto 24rpx auto; */
+}
+
+.getCode {
+  position: absolute;
+  right: 0;
+}
+
+input.srsjh {
+  font-size: 28rpx;
+}
+
+/* 支付方式弹框 */
+
+.mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  z-index: 101;
+}
+
+.t-zhifu {
+  position: absolute;
+  z-index: 33;
+  width: 622rpx;
+  min-height: 300rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.t-chedui {
+  min-height: 500rpx;
+  height: 560rpx;
+  z-index: 22;
+  border: 1px solid transparent;
+  align-self: flex-start;
+  margin-top: 200rpx;
+}
+
+view.zhifu_list {
+  margin: 0 30rpx;
+  width: 550rpx;
+}
+
+view.list_item {
+  width: 100%;
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  margin: 0;
+  padding: 24rpx 0;
+  box-sizing: border-box;
+}
+
+.list_item>.b_left {
+  width: 70%;
+  /* border: 1px solid red; */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* color: rgba(0, 0, 0, 0.26); */
+  justify-content: center;
+}
+
+.list_item>view.b-right {
+  width: auto;
+  /* border: 1px solid red; */
+  text-align: right;
+  line-height: 80rpx;
+}
+
+.b-right>image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.list_item_name {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 34rpx;
+  margin-bottom: 10rpx;
+}
+
+.list_item_value {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.list_item_light>.b_left {
+  color: #222;
+}
+
+.list_item_light>.b_left>.list_item_name {
+  color: #222;
+}
+
+.list_item_light>.b_left>.list_item_value {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* 车牌弹框
+ */
+
+.inputPlateNum_view {
+  position: relative;
+  width: 100%;
+  height: 150rpx;
+  margin: 32rpx auto;
+  background-color: white;
+  text-align: center;
+}
+
+.inputPlateNum_view view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  /* top: 50%; */
+  left: 0;
+  /* margin-top: -52rpx; *//* margin-left: -313rpx; */
+}
+
+input {
+  display: inline-block;
+  text-align: left;
+}
+
+.input_placeholder {
+  color: #ccc;
+  font-size: 64rpx;
+}
+
+view.plate {
+  position: absolute;
+  display: inline-block;
+  width: 88rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 56rpx;
+  margin-left: 1rpx;
+  left: 36rpx;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.Light {
+  color: #000;
+}
+
+.Dark {
+  color: #ccc;
+}
+
+.plate image {
+  width: 88rpx;
+  height: 104rpx;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.plate text {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -28rpx;
+}
+
+input.number {
+  position: absolute;
+  width: 324rpx;
+  height: 104rpx;
+  font-size: 64rpx;
+  left: 150rpx;
+  z-index: 2;
+  color: #222;
+}
+
+.keyBoardBg {
+  position: absolute;
+  width: 100%;
+  bottom: -442rpx;
+  height: 442rpx;
+  background-color: #cfd4d7;
+  z-index: 700;
+}
+
+.keyBoard {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 656rpx;
+  height: auto;
+  margin: 0 auto;
+  padding: 12rpx 0;
+  box-sizing: border-box;
+}
+
+.keyBoardItem {
+  display: flex;
+  position: relative;
+  width: 64rpx;
+  height: 88rpx;
+  font-size: 36rpx;
+  color: #0c1113;
+  margin: 8rpx 8rpx;
+  text-align: center;
+  border: 0px solid transparent;
+}
+
+.keyBoardItem image {
+  position: absolute;
+  z-index: 0;
+  width: 64rpx;
+  height: 88rpx;
+  left: 0;
+}
+
+.keyBoardItem button {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  z-index: 1;
+  width: 64rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 36rpx;
+  color: #0c1113;
+  left: 0;
+  padding: 0;
+}
+
+.tiaoguo {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.54);
+  text-align: right;
+  padding-right: 36rpx;
+  margin-top: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 油站通知弹框 */
+
+.t-stationAdvertDialog {
+  width: 80%;
+  margin-left: 10%;
+  min-height: 360rpx;
+  height: auto;
+  background-color: #fff;
+  z-index: 77;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.t-stationAdvertDialog>.title {
+  color: #222;
+  font-size: 36rpx;
+  margin-top: 10rpx;
+  margin-bottom: 40rpx;
+}
+
+.t-stationAdvertDialog>.contents {
+}
+
+.t-stationAdvertDialog>.contents>.content {
+  font-size: #ccc;
+  margin-top: 20rpx;
+}
+
+.t-stationAdvertDialog>.content:last-child {
+  margin-bottom: 30rpx;
+}
+
+.t-stationAdvertDialog>.confirm {
+  color: #f93;
+  font-size: 36rpx;
+  position: absolute;
+  bottom: 20rpx;
+  text-align: center;
+  left: 0;
+}
+
+.orange {
+  color: #f5680a;
+}
+
+.red {
+  color: #f56464;
+}
+
+.grape {
+  color: #b876b8;
+}
+
+/* 7\t-isNeedAlertDiscount */
+
+.t-isNeedAlertDiscount {
+  z-index: 11;
+}
+
+.t-couponAdvertDialog {
+  z-index: 44;
+}
+
+.t-isNeedAlertNotife {
+  z-index: 55;
+}
+
+/* 注册手机号页面 */
+
+.mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  width: 622rpx;
+  height: 664rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 118rpx;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+}
+
+.login view {
+  width: 88%;
+  margin-left: 6%;
+  line-height: 70rpx;
+}
+
+.login text {
+  font-size: 30rpx;
+}
+
+.text1 {
+  margin: 36rpx 0 0 36rpx;
+  display: block;
+  font-size: 34rpx;
+  color: #222;
+}
+
+.text3 {
+  margin: 22rpx 0 36rpx 36rpx;
+  display: block;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.login .text2 {
+  padding: 104rpx 0 20rpx 26rpx;
+  display: block;
+}
+
+.login input {
+  height: 104rpx;
+  width: 350rpx;
+  color: #000;
+}
+
+.login .button {
+  width: 170rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  border-radius: 6rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #f93;
+}
+
+.phone_input {
+  width: 80%;
+  height: 104rpx;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  margin-top: 20rpx;
+  display: block;
+  width: 88%;
+  margin-left: 6%;
+}
+
+.logo_grey_view {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+image.logo_grey {
+  width: 140rpx;
+  height: 40rpx;
+  /* margin: 36rpx auto 24rpx auto; */
+}
+
+.getCode {
+  position: absolute;
+  right: 0;
+}
+
+input.srsjh {
+  font-size: 28rpx;
+}
+
+/* 登录样式 */
+
+.t-login {
+  width: 70%;
+  height: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  z-index: 88;
+  padding: 0;
+  position: relative;
+  top: auto;
+}
+
+view.welcome {
+  width: 100%;
+  color: #000;
+  font-size: 24rpx;
+  padding: 40rpx 50rpx 30rpx 50rpx;
+  box-sizing: border-box;
+  margin: 0;
+  line-height: 44rpx;
+}
+
+.button_b {
+  border-top: 1px solid #dfdfdf;
+  width: 100%;
+  background-color: transparent;
+  color: #09bb07;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0;
+  font-size: 30rpx;
+}
+
+/* 微信用户快速登录弹框 */
+
+.t-wxLogin {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 30rpx;
+  height: auto;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  z-index: 88;
+  position: relative;
+  padding: 40rpx;
+  box-sizing: border-box;
+  text-align: center;
+  top: auto;
+}
+
+.t-wxLogin>.title {
+  font-size: 34rpx;
+  color: #222;
+  font-weight: bold;
+  text-align: left;
+}
+
+.t-wxLogin>.title_add {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.54);
+  line-height: 30rpx;
+  text-align: left;
+}
+
+.t-wxLogin>.button_b {
+  color: #fff;
+  background: #ff7a21;
+  margin: 40rpx auto;
+}
+
+.t-wxLogin>image {
+  margin: auto;
+}
+
+.ticket_value_discount {
+  font-family: PingFangSC-Regular;
+  font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 2rem;
+  text-align: right;
+}
+
+.ticket_value_discount span {
+  font-size: 1.0625rem;
+}
+
+.ticket_item_value_no {
+  width: 100rpx;
+}
+
+.input_gun_part {
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  font-size: 30rpx;
+  padding: 0 8%;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.input_gun_part>view {
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.input_gun_part>.youqiang {
+  justify-content: flex-start;
+}
+
+.input_gun_part>input {
+  position: relative;
+  text-align: center;
+}
+
+/* 自定义键盘 */
+
+.keyBoard_box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: #e0e0e0;
+  z-index: 99;
+}
+
+.personal_keybord {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20rpx;
+  box-sizing: border-box;
+  padding-bottom: 40rpx;
+}
+
+.key_item {
+  margin: 0;
+  width: 31%;
+  height: 88rpx;
+  background: #fff;
+  font-size: 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  margin-bottom: 20rpx;
+}
+
+button.key_item:active {
+  opacity: 0.4;
+}
+
+.key_item_trans {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.key_item_trans>image.del {
+  width: 60rpx;
+  height: 30rpx;
+}
+
+.key_item_trans>image.dash {
+  width: 30rpx;
+  height: 10rpx;
+}
+
+.close_keybord {
+  width: 100%;
+  height: 40rpx;
+  background-color: #ddd;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close_keybord>image {
+  width: 60rpx;
+  height: 20rpx;
+  z-index: 99;
+}
+
+view.personal_input_part {
+  width: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+view.personal_input_part>input {
+  width: 200rpx;
+  font-size: 46rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+ 
+}
+
+view.personal_input_part>image {
+  height: 40rpx;
+  width: 8rpx;
+  margin-left: 10rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -80rpx;
+}

@@ -1,0 +1,282 @@
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <!-- <input  placeholder="在这输入油枪号" focus='true' /> -->
+  <view class="top">
+    <image src="../../img/common/default2.jpg" mode="aspectFill"></image>
+    <image src="{{scanCode.oilgunPanelStationPic}}" mode="aspectFill" bindload='imgLoadAnimation' wx:if='{{scanCode.oilgunPanelStationPic}}'></image>
+  </view>
+  <!-- style='opacity: 0' -->
+  <!-- 是否是可以输入横杠的油站 -->
+
+  <view class=" input_gun_part" bindtouchstart='click_input_gun_box'>
+    <view class="t-aaa youqiang">油枪:</view>
+    <view class="personal_input_part">
+      <input bindinput="getGunValue" type="{{input_keybord_type}}" disabled='true' value="{{inputTxt}}" />
+      <!-- <image src="../../img/gun/input_redsign.gif" wx:if="{{inputTxt.length>0}}"></image> -->
+    </view>
+
+    <!-- focus='{{!disabled_input_gun}}' -->
+    <view class="t-aaa haoyouqiang">号油枪</view>
+  </view>
+
+ 
+
+  <view class="oilType t-aaa">{{oilCode}}</view>
+
+  <button form-type="submit" class="button_a" disabled="{{buttonState}}" bindtap="toPay" style="{{buttonState?'background: #ccc;color:#fff':''}}">确认</button>
+
+  <!-- 6、车队卡弹框-输入 -->
+  <view class="mask" wx:if="{{show_pop_box_chedui}}">
+    <view class=" t-aaa t-zhifu t-chedui ">
+      <text class="text1">使用车队卡支付</text>
+      <text class="text3">请先输入当前驾驶的车辆车牌号</text>
+      <!-- 车牌input -->
+      <view class="inputPlateNum_view">
+        <view>
+
+          <view bindtouchstart="inputPlateFocusFun" class="{{plateTextfilled?'plate Light':'plate Dark'}}">
+
+            <image wx:if="{{!plateTextfilled}}" src="../../img/common/region_normal.png"></image>
+            <image wx:else src="../../img/common/region_selected.png"></image>
+            <text>{{plateText}}</text>
+          </view>
+
+          <input focus="{{autoFocus}}" bindinput="plateNumInput" bindtouchstart='plateNumFocus' class="number" type="text" placeholder='A88888' placeholder-class="input_placeholder" maxlength='6' value=""></input>
+        </view>
+      </view>
+      <view class="button_view" style="width:100%">
+        <button form-type="submit" bindtap="buttonClick" class="{{plateTextfilled&&NumIsRight?'light':''}} one_button" disabled="{{!plateTextfilled||!NumIsRight}}">{{chedui_button_text}}</button>
+      </view>
+      <view class="tiaoguo" catchtap='chedui_tiaoguo'>换一种支付方式</view>
+    </view>
+  </view>
+  <!-- 拉起键盘 -->
+  <!--pullKeyBoard-->
+  <view wx:if="{{pullKeyBoard}}" animation="{{animationData}}" class="keyBoardBg" style="{{bottom}}">
+    <view class="keyBoard">
+
+      <view wx:for="{{cityArr}}" wx:key="" id="{{item.id}}" bindtap='cityItemClick' class="keyBoardItem">
+        <button wx:if="{{item.id!=currentItemId}}" formType="submit" style="background-image:url('https://img.ejiayou.com/experience_app_img/experience_app_2/chargeCard/pic_keyboard.png');background-size:100% 100%;">{{item.city}}</button>
+        <button wx:else formType="submit" style="background-image:url('https://img.ejiayou.com/experience_app_img/experience_app_2/chargeCard/pic_keyboard_focused.png');background-size:100% 100%;">{{item.city}}</button>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 5、选择支付方式  isNeedSelect支付方式 -->
+  <view class="mask" wx:if="{{show_pop_box_zhifu&&scanCode.paySelectObject.isShowDialog}}">
+    <view class=" t-aaa t-zhifu ">
+      <text class="text1">{{scanCode.paySelectObject.title}}</text>
+      <text class="text3">{{scanCode.paySelectObject.notice}}</text>
+      <view class="zhifu_list">
+        <view class="{{item.state==1?'list_item list_item_light':'list_item'}}" wx:key="oilId" wx:for="{{scanCode.paySelectObject.paymentList}}" wx:for-item="item" data-id="{{item.payTypeId}}" data-name="{{item.name}}" data-state="{{item.state}}" bindtap="click_payList_item">
+          <view class="b_left">
+            <view class="list_item_name">{{item.name}}</view>
+            <view class="list_item_value" wx:if="{{item.balance}}">余额:￥{{item.balance}}</view>
+          </view>
+          <view class='b-right'>
+            <view wx:if="{{item.state==0}}">账户被冻结</view>
+            <image wx:else src="../../img/common/arrows_left.png" mode='widthFix'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 4、送券弹框  -->
+  <view class="BombBox_mask t-couponAdvertDialog" wx:if="{{show_pop_box_ticket&&scanCode.couponAdvertDialog&&scanCode.couponAdvertDialog.couponList}}">
+    <view class="BombBox ">
+      <view class="ticket_body_content">
+        <view class="head">
+          <image src="{{scanCode.couponAdvertDialog.titleUrl}}" alt="" srcset="" mode="widthFix"></image>
+        </view>
+        <view class="ticket_body " style="{{'background-color:'+scanCode.couponAdvertDialog.backgroundColor}}">
+          <view class="ticket_body_content">
+            <!-- 油品券 -->
+            <view class="ticket_item orange" wx:if="{{item.couponType==1}}" wx:for="{{scanCode.couponAdvertDialog.couponList}}" wx:key="" wx:for-item="item">
+              <image class="decorations" src="../../img/gun/decorations@3x.png" alt="" srcset="" mode="widthFix"></image>
+              <view class="triangle_j" wx:if="{{item.num>1}}">
+                <view class="text">{{item.num}}张</view>
+              </view>
+              <image class="triangle" wx:if="{{item.num>1}}" src="../../img/gun/triangle.png" alt="" srcset="" mode="widthFix"></image>
+              <image class="carwash" src="../../img/gun/carwash@3x.png" alt="" srcset="" mode="widthFix"></image>
+              <view class="ticket_item_left">
+                <view class="ticket_item_name orange">油品券</view>
+                <view class="ticket_item_detail" wx:if="{{item.limitPay!=null}}">{{item.limitPay}}</view>
+              </view>
+              <view class="ticket_item_value orange" wx:if="{{item.discount}}">
+                <view class="ticket_value_discount">{{item.value}}
+                  <span>折</span>
+                </view>
+              </view>
+              <view class="ticket_item_value orange" wx:else>
+                <view class="ticket_item_value_unit">￥</view>
+                <view class="ticket_item_value_no">{{item.value}}</view>
+              </view>
+            </view>
+            <!-- 商品券 -->
+            <view class="ticket_item red" wx:if="{{item.couponType==2}}" wx:for="{{scanCode.couponAdvertDialog.couponList}}" wx:key="" wx:for-item="item">
+              <image class="decorations" src="../../img/gun/decorations@3x.png" alt="" srcset="" mode="widthFix"></image>
+              <view class="triangle_j" wx:if="{{item.num>1}}">
+                <view class="text">{{item.num}}张</view>
+              </view>
+              <image class="triangle" wx:if="{{item.num>1}}" src="../../img/gun/triangle.png" alt="" srcset="" mode="widthFix"></image>
+              <image class="carwash" src="../../img/gun/carwash@3x.png" alt="" srcset="" mode="widthFix"></image>
+              <view class="ticket_item_left">
+                <view class="ticket_item_name red">商品券</view>
+                <view class="ticket_item_detail" wx:if="{{item.limitPay!=null}}">{{item.limitPay}}</view>
+              </view>
+              <view class="ticket_item_value red" wx:if="{{item.discount}}">
+                <view class="ticket_value_discount">{{item.value}}
+                  <span>折</span>
+                </view>
+              </view>
+              <view class="ticket_item_value red" wx:else>
+                <view class="ticket_item_value_unit">￥</view>
+                <view class="ticket_item_value_no">{{item.value}}</view>
+              </view>
+            </view>
+            <!-- 洗车券 -->
+            <view class="ticket_item grape" wx:if="{{item.couponType==3}}" wx:for="{{scanCode.couponAdvertDialog.couponList}}" wx:key="" wx:for-item="item">
+              <image class="decorations" src="../../img/gun/decorations@3x.png" alt="" srcset="" mode="widthFix"></image>
+              <view class="triangle_j" wx:if="{{item.num>1}}">
+                <view class="text">{{item.num}}张</view>
+              </view>
+              <image class="triangle" wx:if="{{item.num>1}}" src="../../img/gun/triangle.png" alt="" srcset="" mode="widthFix"></image>
+              <image class="carwash" src="../../img/gun/store.png" alt="" srcset="" mode="widthFix"></image>
+              <view class="ticket_item_left">
+                <view class="ticket_item_name grape">洗车券</view>
+                <view class="ticket_item_detail" wx:if="{{item.limitPay!=null}}">{{item.limitPay}}</view>
+              </view>
+              <view class="ticket_item_value grape" wx:if="{{item.discount}}">
+                <view class="ticket_value_discount">{{item.value}}
+                  <span>折</span>
+                </view>
+              </view>
+              <view class="ticket_item_value grape" wx:else>
+                <view class="ticket_item_value_unit">￥</view>
+                <view class="ticket_item_value_no">{{item.value}}</view>
+              </view>
+            </view>
+
+
+
+          </view>
+        </view>
+        <view class="foot" catchtap='close_pop_box_ticket'>
+          <image src="{{scanCode.couponAdvertDialog.tailUrl}}" alt="" srcset="" mode="widthFix"></image>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- 2、isNeedAlertNotife -->
+  <view class="mask" wx:if="{{show_pop_box_alertNotifeContent&&scanCode.wechatVo.isNeedAlertNotife}}">
+    <view class=" t-aaa t-stationAdvertDialog t-isNeedAlertNotife ">
+
+      <view class="title">
+        扫码须知
+      </view>
+      <view class="content"> {{scanCode.wechatVo.alertNotifeContent}}</view>
+      <view class="confirm" bindtap='close_pop_box_alertNotifeContent'>我知道了</view>
+
+      <view>
+
+      </view>
+    </view>
+  </view>
+
+  <!-- 油站通知 1、stationAdvertDialog-->
+  <view class="mask" wx:if="{{show_pop_box_stationAdvertDialog&&scanCode.stationAdvertDialog}}">
+    <view class=" t-aaa t-stationAdvertDialog ">
+      <view class="title">
+        {{scanCode.stationAdvertDialog.title}}
+      </view>
+      <view class="contents" style="margin-bottom:60rpx;">
+
+        <view class="content" wx:for="{{scanCode.stationAdvertDialog.content}}" wx:key="2" wx:for-item="item"> {{item}}</view>
+      </view>
+      <view class="confirm" bindtap='close_pop_box_stationAdvertDialog'>我知道了</view>
+
+      <view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 支付广告 1、payAdvertDialog-->
+
+
+  <!--3、登陆-->
+
+  <!-- 手动登陆弹框 -->
+  <view class="mask" wx:if="{{show_pop_box_login_shoudong}}">
+    <view class="login t-aaa " wx:if="{{show_pop_box_login_shoudong}}">
+      <text class="text1">使用手机号登录</text>
+      <text class="text3">为保障您的账户安全和优惠权益，请填写手机号</text>
+      <view class=" phone_input">
+        <input type="number" class=" phonenumber srsjh" bindinput="getPhone" maxlength="11" disabled="{{(_lcode!=''&&_lcode==lcode)}}" placeholder='输入手机号' />
+        <view class="button " bindtap="sendCode" form-type="submit">{{loginCode}}</view>
+      </view>
+      <view class=" phone_input " style="border-top:0px solid transparent">
+        <input type="number" class="code phonenumber srsjh" bindinput="getCode" maxlength="6" placeholder='输入验证码' />
+        <text style="margin-left: 50rpx;color:rgba(0,0,0,0.26)">{{(_lcode!=''&&_lcode==lcode)?"验证成功":""}}</text>
+      </view>
+      <button form-type="submit" class="login_button" disabled="{{!(_lcode!=''&&_lcode==lcode&&mustDisabled)}}" bindtap='login'>确定</button>
+      <view class="logo_grey_view">
+
+        <image src='../../img/common/logo_grey.png' class="logo_grey" mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{show_pop_box_login_wx}}">
+    <view class="login t-bbb t-wxLogin ">
+      <view class="title">快速登录</view>
+      <view class="title_add">为保障您的账户安全和优惠权益,请登录后买单</view>
+      <button form-type="submit" class="button_b" open-type='getPhoneNumber' bindgetphonenumber="click_getPhoneNumber">微信用户快速登录</button>
+      <image src='../../img/common/logo_grey.png' class="logo_grey" mode='widthFix'></image>
+    </view>
+  </view>
+
+  <!-- 用户信息 -->
+
+  <view class="mask" wx:if="{{show_pop_box_button_getUserInfo}}">
+    <view class="login t-bbb t-login ">
+      <view class="welcome">欢迎使用易加油,请授权微信公开信息后进行加油服务</view>
+      <button form-type="submit" class="button_b" open-type='getUserInfo' bindgetuserinfo="click_getUserInfo">知道了</button>
+    </view>
+  </view>
+  <!-- 自定义“-”键盘 -->
+  <view class='keyBoard_box' wx:if="{{show_keybord_personal}}">
+    <view class="close_keybord" bindtouchstart='close_keybord_personal'>
+      <image src='../../img/gun/close.png'></image>
+    </view>
+    <view class="personal_keybord">
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="1">1</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="2">2</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="3">3</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="4">4</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="5">5</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="6">6</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="7">7</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="8">8</button>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="9">9</button>
+
+
+      <view class="key_item key_item_trans" bindtouchstart='click_personal_dash' style='font-size:70rpx;'>
+        -
+        <!-- <image src='../../img/common/region_normal.png' class="dash"></image> -->
+      </view>
+      <button class="key_item" bindtouchstart='click_personal_keybord' data-value="0">0</button>
+      <view class="key_item key_item_trans" bindtouchstart='click_personal_keybord_del'>
+        <image src='../../img/gun/backspace@3x.png' class="del" mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+
+
+</form>
+<!--wxapp-toast start-->
+<template is="toast" data="{{...toastData}}" />
+<!--wxapp-toast end-->
+
+<import src="../../templates/toast.wxml" />

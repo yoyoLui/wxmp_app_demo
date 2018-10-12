@@ -1,0 +1,57 @@
+<!-- <view value='{{asss}}'></view> -->
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class="input-1">
+    <view style="background-color: #fff;height:104rpx;position: relative;">
+      <image src="{{input1_data.imgSrc}}" style="width: 40rpx;height:40rpx;position: absolute;top:32rpx;left:32rpx"></image>
+      <input value="{{input_price}}" maxlength="6" type="digit" style="height:104rpx;text-align: center;position: absolute;left:140rpx;right:140rpx;margin: auto" bindinput="input1_fc" placeholder="在这输入金额" placeholder-style="font-family: '微软雅黑';font-size:30rpx;text-align:center"
+      />
+      <text style="position: absolute;right: 32rpx;top:0;height:104rpx;line-height: 104rpx;font-size: 32rpx;color: #AAA">{{input1_data.payInfo.oilMass?'约'+input1_data.payInfo.oilMass+'L':''}}</text>
+    </view>
+  </view>
+  <view class="text-1">
+    <text>{{input1_data.payInfo.countryPrice}}</text>
+    <text class="m-clear t-red">{{input1_data.payInfo.stationReduce}}</text>
+  </view>
+  <view class="bg-white option">
+    <view class="privilege m-center-h">
+      <text class="f-left t-555">易加油优惠:</text>
+      <text class="f-right t-red">{{input1_data.payInfo.ejiayouReduce}}</text>
+    </view>
+    <view class="ticket m-center-h" bindtap="toTicket">
+      <text class="f-left t-555">优惠券:</text>
+      <image class="f-right" src="../../img/common/arrows_left.png" style="width: 36rpx;height:40rpx;margin-top:32rpx"></image>
+      <image class="f-right" src="../../img/common/redbao.png" style="width: 41rpx;height: 50rpx;margin:26rpx 0 0 10rpx" wx:if="{{!!input1_data.payInfo.merchandiseSelect.merchandiseValue}}"></image>
+      <text class="f-right" style="color:{{input1_data.payInfo.merchandiseSelect.merchandiseValue?'#e9a84a':'#aaa'}}">{{input1_data.payInfo.merchandiseSelect.merchandiseValue?input1_data.payInfo.merchandiseReduce:'暂无'}}</text>
+    </view>
+  </view>
+  <view class="bg-white option invoice" bindtap="toInvoice" wx:if="{{isNeedPrintInvoice==1}}">
+    <view class="m-center-h">
+      <text class="f-left t-555">发票:</text>
+      <!--  {{!refuseInvoice}}-->
+      <block wx:if="{{!noInvoiceDescription}}">
+        <!-- 允许开发票 -->
+        <image class="f-right" src="../../img/common/arrows_left.png" style="width: 36rpx;height:40rpx;margin-top:32rpx"></image>
+        <text class="f-right t-aaa" style="width:550rpx;text-align: right;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{noInvoice}}</text>
+      </block>
+      <block wx:else>
+        <!-- 不能开发票 -->
+        <view wx:if="{{noInvoiceIsRed}}" class="" style="float:right;width:400rpx;text-align:right;display:inline-block;font-size:28rpx;color:red;">
+          {{noInvoiceDescription}}
+        </view>
+        <view wx:else class="" style="float:right;width:400rpx;text-align:right;display:inline-block;font-size:28rpx;">
+          {{noInvoiceDescription}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="submit">
+
+    <button wx:if="{{input1_data.payInfo.orderSum==0}}" form-type="submit" style="{{(input1_data.price=='')?'background: #ccc;color:#fff':''}}" bindtap="pay" disabled="{{input1_data.price==''}}">金额:￥0元</button>
+    <button wx:else form-type="submit" style="{{(input1_data.price=='')?'background: #ccc;color:#fff':''}}" bindtap="pay" disabled="{{input1_data.price==''||!common_price}}">确认{{input1_data.payInfo.orderSum?'金额:￥'+(input1_data.payInfo.orderSum):''}}</button>
+  </view>
+</form>
+<!--wxapp-toast start-->
+<template is="toast" data="{{...toastData}}" />
+<!--wxapp-toast end-->
+
+<import src="../../templates/toast.wxml" />

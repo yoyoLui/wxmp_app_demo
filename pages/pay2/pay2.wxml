@@ -1,0 +1,78 @@
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class="common_container">
+    <!-- 顶部油站信息 -->
+    <view class='top'>
+      <image src='{{station_img}}' class='station_img'></image>
+      <view class='right'>
+        <text class='station_name'>{{station_name}}</text>
+        <text class='price_and_oil'>￥{{inputPrice}}  {{oilcode}}</text>
+      </view>
+    </view>
+
+  <!-- 支付方式列表 -->
+  <view class='list_item' wx:for="{{list}}" wx:key="{{index}}" bindtap='setPayWay' data-index='{{item.payWay}}'>
+    <image src='{{item.icon}}' class='icon'></image>
+    <view class='mid'>
+      <text class='payName'>{{item.title}}</text>
+      <text class='balance' wx:if="{{item.payBalance != ''}}">余额:￥{{item.payBalance}}</text>
+    </view>
+    <image class='select_icon' src='{{item.selectIcon}}' wx:if="{{item.payState != 0}}"></image>
+    <text class='select_text' wx:if="{{item.payState == 0}}">{{item.payDescription}}</text>
+  </view>
+  <!-- 支付完广告 -->
+  <view class='pay_advert_wrap' wx:if="{{isShowAdvert}}">
+    <view class='pay_advert_dialog' wx:for="{{advertList}}" wx:key="{{index}}">
+      <image src='{{advertUrl}}' class='advert_icon'></image>
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+    <!-- 确认按钮 -->
+    <button  form-type="submit" class='confirm_btn' type='button' bindtap="gotopay" disabled='{{disabled}}' style="background-color: {{disabled?'#E0E0E0':''}}">确认金额：￥{{orderSum}}</button>
+    <!--默认隐藏-->
+    <loading hidden="{{hiddenLoading}}">{{loadingMsg}}</loading>
+  </view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!-- 去设置弹框 -->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus == 'setPwd'}}">
+  <view class='pop_title'>
+    <text>为了保障您的账户安全，请先设置电子油卡支付密码</text>
+  </view>
+  <view class='pop_btn'>
+    <text>去设置</text>
+  </view>
+</view>
+
+<!-- 输入错误 -->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus == 'retryPwd'}}">
+  <view class='pop_title'>
+    <text>{{failMsg}}</text>
+  </view>
+  <view bindtap="retryInput" class='pop_double_btn'>
+    <!-- <text>忘记密码</text> -->
+    <text class='retry_btn'>重试</text>
+  </view>
+</view>
+
+<!-- 输入密码 -->
+<view animation="{{animationData}}" class="input_pwd_box" wx:if="{{showModalStatus == 'inputPwd'}}">
+  <view class='input_pwd_top'>
+    <text class='input_pwd_title'>电子油卡支付密码</text>
+    <text class='input_pwd_balance'>{{cardType}} 余额:￥{{cardBalance}}</text>
+    <image src='../../img/common/x.png' bindtap='closeInputPwd'></image>
+  </view>
+  <view class='input_pwd_bottom'>
+    <text>¥{{orderSum}}</text>
+    <paySix bindvalueSix="valueSix" input_value="{{inputData.input_value}}" value_length="{{inputData.value_length}}" isNext="{{inputData.isNext}}" get_focus="{{inputData.get_focus}}" focus_class="{{inputData.focus_class}}" value_num="{{inputData.value_num}}"
+      height="{{inputData.height}}" width="{{inputData.width}}" see="{{inputData.see}}" interval="{{inputData.interval}}">
+    </paySix>
+  </view>
+</view>
+</form>
+<!--wxapp-toast start-->
+<template is="toast" data="{{...toastData}}" />
+<!--wxapp-toast end-->
+
+<import src="../../templates/toast.wxml" />

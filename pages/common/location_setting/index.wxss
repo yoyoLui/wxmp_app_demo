@@ -1,0 +1,80 @@
+
+
+
+
+/* @keyframes page_in {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes page_out {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 100%;
+  }
+} */
+.common_part {
+  text-align: center;
+  padding: 0 20%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: #fff;
+  box-sizing: border-box;
+  /* animation: page_in 2s linear; */
+    overflow-y: hidden;
+}
+
+image.logo_image {
+  width: 176rpx;
+  height: 180rpx;
+  margin: auto;
+  margin-top: 40%;
+}
+
+.can_not_location {
+  font-size: 40rpx;
+  color: #222;
+  margin-top: 10%;
+}
+
+.qingdao {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.46);
+  margin-top: 5%;
+}
+
+button.setting {
+  width: 100%;
+  background-color: #ff7a21;
+  color: #fff;
+  margin-top: 50%;
+  font-size: 34rpx;
+}
+
+button:active {
+  opacity: 0.4;
+}
+
+button.cancel {
+  background-color: transparent;
+  border: none;
+  border-style: none;
+  width: 100%;
+  margin-top: 10%;
+  font-size: 34rpx;
+  color: rgba(0, 0, 0, 0.26);
+}
+
+button::after {
+  border: none;
+}

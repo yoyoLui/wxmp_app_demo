@@ -1,0 +1,7 @@
+<template name="input1">
+	<view style="background-color: #fff;height:104rpx;position: relative;">
+		<image src="{{imgSrc}}" style="width: 40rpx;height:40rpx;position: absolute;top:32rpx;left:32rpx"></image>
+		<input value="{{test}}" type="number" style="height:104rpx;width:100%;text-align: center;" bindinput="{{function}}"/>
+		<text style="position: absolute;right: 32rpx;top:0;height:104rpx;line-height: 104rpx;font-size: 32rpx;color: #AAA">{{rightText}}</text>
+	</view>
+</template>

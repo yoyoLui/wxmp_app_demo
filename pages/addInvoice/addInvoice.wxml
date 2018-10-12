@@ -1,0 +1,21 @@
+<view class='common_container'>
+  <!-- 输入发票抬头 -->
+  <view class='edit_text_div'>
+    <text class='title'>发票抬头</text>
+    <textarea class='input_text' placeholder='必填' placeholder-class='text_placeholder' maxlength='25' bindinput='bindInputName'></textarea>
+    <text class='text_length' style='color:{{textColor}}'>{{textLength}}</text>
+  </view>
+
+  <!-- 输入发票税号 -->
+  <view class='edit_num_div'>
+    <text>纳税人号</text>
+    <input placeholder='若需单位报销务必填写此项' placeholder-class='text_placeholder' class='input_num' type='text' bindinput='bindInputNum' value='{{numberValue}}'></input>
+    <view class='clear_div' style='display: {{display}}' bindtap='clearNumber'>
+      <image src='../../img/common/Clear.png'></image>
+    </view>
+  </view>
+  <button class='saveBtn' disabled='{{disabled}}' type='button' bindtap='saveInvoice' style="background-color: {{disabled?'#E0E0E0':'#ff7a21'}}">保存</button>
+  <!--默认隐藏-->
+  <loading hidden="{{hiddenLoading}}">{{loadingMsg}}</loading>
+</view>
+

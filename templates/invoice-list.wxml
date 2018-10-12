@@ -1,0 +1,15 @@
+<template name="invoice-list">
+	<view wx:for="{{data}}" wx:for-item="i" wx:key="i" style="background-color: #fff;height:100rpx;line-height: 100rpx;font-size: 32rpx;color: #999;position: relative;margin-bottom: 2rpx;overflow: hidden;">
+		<image src="{{i.selectImg}}" style="width: 32rpx;height: 32rpx;margin:34rpx 16rpx 0 10rpx" class="f-left"></image>
+		<text class="f-left" style="width: 476rpx;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{i.text}}</text>
+		<view style="height:100rpx;width:210rpx" class="f-right" data-index="{{index}}"  wx:if="{{i.overflow}}">
+			<image src="../../img/common/pen.png"  style="width: 40rpx;height: 40rpx;margin:30rpx 50rpx 0 0" class="f-right" data-index="{{index}}"></image>
+		</view>
+		<view style="position: absolute;height:100rpx;width:540rpx;left:0;top:0;" data-index="{{index}}" catchtap="{{selectFc}}">
+		</view>
+		<view style="width: 210rpx;height:100rpx;line-height: 100rpx;text-align: center;font-size: 32rpx;position: absolute;right:-210rpx;" class="t-white" animation="{{i.animation}}">
+			<view style="height：100rpx;width: 100rpx;background-color:#FFA031;margin-right: 5rpx" class="f-left" data-index="{{index}}" bindtap="editInvoice">编辑</view>
+			<view style="height：100rpx;width: 100rpx;background-color:#FFA031;margin-right: 5rpx" class="f-left" data-index="{{index}}" catchtap="deleteInvoice">删除</view>
+		</view>
+	</view>
+</template>

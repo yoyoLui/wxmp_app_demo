@@ -1,0 +1,6 @@
+
+
+
+     <web-view src="https://api.ejiayou.com/wxmp/view/wxCode.ac?qrId=1234&appId=gh_8abe738e8e98&minapp_openid={{open_id}}&formid={{form_id}}"></web-view>     
+
+

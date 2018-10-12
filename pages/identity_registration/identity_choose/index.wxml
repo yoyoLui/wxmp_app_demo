@@ -1,0 +1,37 @@
+<view class="identity_choose" id="app">
+  <view class="title_info">认证身份，享受专属优惠</view>
+  <view class="identity_list">
+    <view class="list_item" bindtouchstart="click_list_item" data-cartype="5">
+      <image class="list_item_car" src="../../../img/identity_registration/ZKC@3x.png" alt="" mode='widthFix'></image>
+      <view class="list_item_content">
+        <view>专快车</view>
+        <view>滴滴专车/快车、美团打车、神州专车</view>
+      </view>
+      <image class="list_item_choose" src="{{chooseCarType==5?'../../../img/identity_registration/Selected@3x.png':'../../../img/identity_registration/Unselected@3x.png'}}" alt="" mode='widthFix'></image>
+    </view>
+    <view class="list_item" bindtouchstart="click_list_item" data-cartype="3">
+      <image class="list_item_car" src="../../../img/identity_registration/MBXH@3x.png" alt="" mode='widthFix'></image>
+      <view class="list_item_content">
+        <view>面包小货</view>
+        <view>加汽油的面包车、小货车</view>
+      </view>
+      <image class="list_item_choose"  mode='widthFix' src="{{chooseCarType==3?'../../../img/identity_registration/Selected@3x.png':'../../../img/identity_registration/Unselected@3x.png'}}"  alt=""></image>
+    </view>
+    <view class="list_item" bindtouchstart="click_list_item" data-cartype="13">
+      <image class="list_item_car" src="../../../img/identity_registration/CYC@3x.png" alt="" mode='widthFix'></image>
+      <view class="list_item_content">
+        <view>柴油车</view>
+        <view>加柴油的车辆</view>
+      </view>
+      <image class="list_item_choose" src="{{chooseCarType==13?'../../../img/identity_registration/Selected@3x.png':'../../../img/identity_registration/Unselected@3x.png'}}" alt="" mode='widthFix'></image>
+    </view>
+    <view class="list_item" bindtouchstart="click_list_item" data-cartype="1">
+      <image class="list_item_car" src="../../../img/identity_registration/SJC@3x.png" alt="" mode='widthFix'></image>
+      <view class="list_item_content">
+        <view class="font_big">自用私家车</view>
+      </view>
+      <image class="list_item_choose" src="{{chooseCarType==1?'../../../img/identity_registration/Selected@3x.png':'../../../img/identity_registration/Unselected@3x.png'}}" alt="" mode='widthFix'></image>
+    </view>
+  </view>
+  <button class="confirm" disabled="{{disabled_button}}" bindtap='confirm'>确认选择</button>
+</view>

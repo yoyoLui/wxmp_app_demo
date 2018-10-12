@@ -1,0 +1,75 @@
+disabled.container{
+
+}
+button,view,text,input,toast{
+	font-family: '微软雅黑';
+}
+view{
+	width: 100%;
+}
+/* 浮---------动 */
+.f-left{
+	float: left !important;
+}
+.f-right{
+	float: right !important;
+}
+.f-clear{
+	clear: both !important;
+}
+/* margin------- */
+.m-clear{
+	margin:0 !important;
+}
+.m-center-h{
+	margin:0 auto;
+}
+/* 颜---------色 */
+/* 文字 */
+.t-red{
+	color: #f00 !important;
+}
+.t-white{
+	color: #fff !important;
+}
+.t-555{
+	color: #555 !important;
+}
+.t-aaa{
+	color: #aaa !important;
+}
+.t-line{
+	text-decoration: line-through;
+}
+.t-line-b{
+	text-decoration: underline;
+}
+/* 背景 */
+.bg-white{
+	background-color: #fff;
+}
+/* 按-------钮 */
+button{
+	width: 690rpx;
+	color: #fff;
+	font-family: "微软雅黑";
+}
+wx-button{
+	background: #FFA032;
+}
+
+
+/* 动画 */
+.move_down {
+  animation: mymove 1s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    from {
+        margin-top: -10%;
+    }
+    to {
+        margin-top: 0;
+    }
+}

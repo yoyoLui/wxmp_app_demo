@@ -1,0 +1,1029 @@
+@keyframes mymove {
+  from {
+    margin-top: 0px;
+  }
+
+  to {
+    margin-top: 20%;
+  }
+}
+
+@-webkit-keyframes mymove {
+  /*Safari and Chrome*/
+
+  from {
+    margin-top: 0px;
+  }
+
+  to {
+    margin-top: 20%;
+  }
+}
+
+body {
+  background-color: #edeceb;
+}
+
+.bg {
+  width: 100%;
+  background-color: #edeceb;
+}
+
+.bg .no_more_ticket {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #edeceb;
+}
+
+.bg .no_more_ticket .instruction {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  margin-top: 0.7rem;
+  right: 1rem;
+  font-family: PingFangSC-Regular;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  height: 1.25rem;
+}
+
+.bg .no_more_ticket .instruction image {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5rem;
+  left: 0;
+}
+
+.bg .no_more_ticket .instruction span {
+  display: inline-block;
+  position: relative;
+  margin-left: 1.25rem;
+}
+
+.bg .no_more_ticket .box {
+  position: absolute;
+  width: 100%;
+  height: 6.25rem;
+  top: 50%;
+  margin-top: -4.375rem;
+}
+
+.bg .no_more_ticket .box view:first-child {
+  font-family: PingFangSC-Semibold;
+  font-size: 1.8125rem;
+  color: rgba(0, 0, 0, 0.24);
+  letter-spacing: 0;
+  line-height: 2.5rem;
+  font-weight: bold;
+}
+
+.bg .no_more_ticket .box view:last-child {
+  font-family: PingFangSC-Regular;
+  font-size: 1.0625rem;
+  color: #f2721d;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  margin-top: 0.625rem;
+}
+
+.bg .no_more_ticket .box view:last-child image {
+  width: 0.375rem;
+  height: 0.75rem;
+}
+
+.bg .container_conpon {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background-color: #edeceb;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+}
+
+.bg .container_conpon .navTo {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 19;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid transparent;
+}
+
+.bg .container_conpon .navTo .bombox {
+  position: relative;
+  width: 100%;
+  padding: 6px 0;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  animation: mymove 1s ease;
+  animation-fill-mode: forwards;
+  -webkit-animation: mymove 1s ease;
+  -webkit-animation-fill-mode: forwards;
+  /*Safari and Chrome*/
+}
+
+.bg .container_conpon .navTo .bombox image {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  right: 1rem;
+  top: 1rem;
+}
+
+.bg .container_conpon .navTo .bombox > view,
+.bg .container_conpon .navTo .bombox button,
+.bg .container_conpon .navTo .bombox li {
+  margin: 0 1rem;
+}
+
+.bg .container_conpon .navTo .bombox view {
+  margin-top: 0.75rem;
+}
+
+/* .bg .container_conpon .navTo .bombox .button_div button {
+  width: 100%;
+  height: 2.1875rem;
+  line-height: 2.1875rem;
+  background-color: #FFA03C;
+  color: #fff;
+  border-style: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 1.25rem 0 1.25rem 0;
+}
+.bg .container_conpon .navTo .bombox .button_div button:active {
+  opacity: 0.8;
+} */
+
+.bg .container_conpon .navTo .bombox .station_title {
+  color: #878787;
+  font-size: 1rem;
+}
+
+.bg .container_conpon .navTo .bombox .station_name {
+  color: #222;
+  font-size: 0.8125rem;
+}
+
+.bg .container_conpon .navTo .bombox .station_addr {
+  color: #222;
+  font-size: 0.8125rem;
+  margin-bottom: 0.75rem;
+}
+
+.bg .container_conpon .navTo .bombox .instruction_title {
+  color: #878787;
+  font-size: 1rem;
+}
+
+.bg .container_conpon .navTo .bombox hr {
+  color: #f7f7f7;
+  opacity: 0.4;
+}
+
+.bg .container_conpon .navTo .bombox .instruction_content {
+  color: #222;
+  font-size: 0.8125rem;
+}
+
+.bg .container_conpon .navTo .bombox .instruction_content li {
+  margin-top: 0.625rem;
+}
+
+.bg .container_conpon .navTo .bombox .instruction_content li span.list {
+  text-align: center;
+  width: 0.875rem;
+  height: 0.875rem;
+  line-height: 0.875rem;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 0.625rem;
+  border: 1px solid #6b6b6b;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.bg .container_conpon .no_use_ticket {
+  position: relative;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 1rem 1rem 0 1rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.bg .container_conpon .no_use_ticket .no_use_ticket_text {
+  font-family: PingFangSC-Regular;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0;
+  margin-left: 1rem;
+}
+
+.bg .container_conpon .no_use_ticket image {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  right: 1rem;
+  top: 50%;
+  margin-top: -0.75rem;
+}
+
+.bg .container_conpon .ticket_module {
+  padding: 0 1rem;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #edeceb;
+  border-bottom: 1px solid transparent;
+}
+
+.bg .container_conpon .ticket_module .title_part {
+  position: relative;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bg .container_conpon .ticket_module .title_part.disabled {
+  height: 2rem;
+  line-height: 0;
+}
+
+.bg .container_conpon .ticket_module .title_part .have_how_much_ticket {
+  display: inline-block;
+  font-family: PingFangSC-Regular;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.54);
+  line-height: 1.25rem;
+}
+
+.bg .container_conpon .ticket_module .title_part .have_how_much_ticket span {
+  color: #f2721d;
+}
+
+.bg .container_conpon .ticket_module .title_part .instruction {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.625rem;
+  right: 0;
+  font-family: PingFangSC-Regular;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 1rem;
+  height: 1rem;
+}
+
+.bg .container_conpon .ticket_module .title_part .instruction image {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5rem;
+  left: 0;
+}
+
+.bg .container_conpon .ticket_module .title_part .instruction span {
+  display: inline-block;
+  position: relative;
+  height: 1rem;
+  line-height: 1;
+  margin-left: 1.25rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  color: #f2721d;
+}
+
+.bg .container_conpon .ticket_module .ticket_item image.dec {
+  position: absolute;
+  width: 100%;
+  top: -6rpx;
+  left: 0;
+}
+
+.bg .container_conpon .ticket_module .ticket_item image.right_cut {
+  position: absolute;
+  right: 0;
+  top: 4.8rem;
+  width: 0.3rem;
+  height: 1rem;
+  z-index: 9;
+}
+
+.bg .container_conpon .ticket_module .ticket_item image.left_cut {
+  position: absolute;
+  left: 0;
+  top: 4.8rem;
+  width: 0.3rem;
+  height: 1rem;
+  z-index: 9;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top {
+  min-height: 4rem;
+  margin: 0.75rem 1rem 0 1rem;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 20rpx;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_name {
+  min-height: 1.5rem;
+  font-family: PingFangSC-Semibold;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  font-weight: bold;
+  margin-right: 6rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_name span {
+  font-family: PingFangSC-Semibold;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  list-style-type: disc;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_name span:before {
+  content: "· ";
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_detail {
+  font-family: PingFangSC-Regular;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  margin-top: 3px;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_value_part {
+  position: absolute;
+  height: 4rem;
+  right: 1rem;
+  top: 1rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_value_part .ticket_value_discount {
+  font-family: PingFangSC-Regular;
+  font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 2rem;
+  text-align: right;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_value_part .ticket_value_discount span {
+  font-size: 1.0625rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_value_part .ticket_value_money {
+  font-family: PingFangSC-Regular;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 2.5rem;
+  text-align: right;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_value_part .ticket_value_money span {
+  font-size: 2rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_top .ticket_value_part .ticket_value_add {
+  font-family: PingFangSC-Regular;
+  font-size: 0.6rem;
+  letter-spacing: 0;
+  line-height: 0.6rem;
+  text-align: right;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .station {
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  line-height: 2.25rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .station image.station_image {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .station view {
+  display: inline-block;
+  font-family: PingFangSC-Regular;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 1.25rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .station image.drop_down {
+  position: absolute;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 50%;
+  margin-top: -0.75rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom {
+  position: relative;
+  width: 100%;
+  line-height: 2.25rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 0 1rem 0.75rem 1rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_title {
+  position: relative;
+  font-family: PingFangSC-Regular;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  /* margin-top: 0.5rem; */
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_title.disabled {
+  height: auto;
+  font-size: 0.7rem;
+  color: #ff3b30;
+  margin-left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_title .multi {
+  position: absolute;
+  left: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #dad7d5;
+  padding: 0.125rem 0 0 0.125rem;
+  border-radius: 0.125rem;
+  top: 50%;
+  margin-top: -1.125rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_title .multi image.item {
+  float: left;
+  width: 0.8125rem;
+  height: 0.8125rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0.1rem;
+}
+
+.stationISingle {
+  position: absolute;
+  left: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #dad7d5;
+  border-radius: 0.125rem;
+  top: 50%;
+  margin-top: -1.125rem;
+}
+
+.stationISingle image.item {
+  float: left;
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  border-radius: 6rpx;
+}
+
+.stationPart {
+  position: absolute;
+  display: inline-block;
+  font-family: PingFangSC-Regular;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  margin-left: 2.6rem;
+  left: 0;
+  top: 50%;
+  margin-top: -0.75rem;
+  margin-right: 2rem;
+}
+
+.stationname span {
+  display: inline-block;
+  /* width:7.5rem; */
+  height: 1.5rem;
+  line-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stationname span>span {
+  display: inline-block;
+  width: 3rem;
+}
+
+.stationname span.not_limit_length {
+  width: auto;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_title image.drop_down {
+  position: absolute;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 50%;
+  margin-top: -0.75rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_title image.drop_down.rotate {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  /* Safari and Chrome */
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_name_title {
+  position: relative;
+  height: 3rem;
+  line-height: 2.25rem;
+  font-family: PingFangSC-Regular;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0;
+  line-height: 1.25rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_name_title .station_name {
+  height: 3rem;
+  display: inline-block;
+  font-family: PingFangSC-Regular;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0;
+  line-height: 3rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_name_title image.drop_down {
+  position: absolute;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 50%;
+  margin-top: -0.75rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_name_title image.drop_down.rotate {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  /* Safari and Chrome */
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll {
+  min-height: 5.9375rem;
+  height: auto;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll view.swiper-slide {
+  width: 7.6875rem;
+  height: auto;
+  text-align: center;
+  font-size: 1.125rem;
+  background: #fff;
+  margin-right: 1rem;
+  /* Center slide text vertically */
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll view.swiper-slide image {
+  display: block;
+  width: 7.6875rem;
+  height: 4.375rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll view.swiper-slide view {
+  width: 100%;
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 1rem;
+  margin-top: 0.3125rem;
+  text-align: left;
+  height: 1.3rem;
+  line-height: 1.3rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll view.swiper-slide view span {
+  float: left;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll view.swiper-slide view span.limitLength {
+  text-align: right;
+  width: 40%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .station_image_scroll view.swiper-slide view span.limitLength:first-child {
+  display: inline-block;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 2px;
+  text-align: left;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .more_rules {
+  margin-top: 0.5rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .more_rules .name {
+  font-family: PingFangSC-Regular;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0;
+  line-height: 2rem;
+}
+
+.bg .container_conpon .ticket_module .ticket_item .ticket_item_bottom .more_rules .detail {
+  font-family: PingFangSC-Regular;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 1rem;
+}
+
+.bg .container_conpon .ticket_module .no_avlCoupon_blank {
+  height: 23.4375rem;
+  line-height: 23.4375rem;
+  font-size: 29px;
+  color: #bdbdbd;
+  letter-spacing: 0;
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+}
+
+.bg .container_conpon .no_more_ticket_to_change {
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.24);
+  letter-spacing: 0;
+  line-height: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bg .container_conpon .no_more_ticket_to_change span {
+  color: #f2721d;
+}
+
+.bg .container_conpon .no_more_ticket_to_change image {
+  width: 0.375rem;
+  height: 0.75rem;
+}
+
+.purple {
+  color: #9a6597;
+}
+
+.orange {
+  color: #f2721d;
+}
+
+.blue {
+  color: #578aa6;
+}
+
+.grey {
+  color: rgba(0, 0, 0, 0.36);
+}
+
+@-webkit-keyframes move_in {
+  0% {
+    left: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes move_in {
+  0% {
+    left: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes move_out {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes move_out {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.move_in {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  -webkit-animation: move_in;
+  animation: move_in;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.move_out {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  -webkit-animation: move_out;
+  animation: move_out;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fali {
+  height: 23.4375rem;
+  line-height: 23.4375rem;
+  font-size: 29px;
+  color: #bdbdbd;
+  letter-spacing: 0;
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+}
+
+/* 多个可用油站 */
+
+view.zzz {
+  position: relative;
+  /* height: 3rem; *//* font-family: PingFangSC-Regular;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  margin-top: 0.5rem; */
+  margin-top: 25rpx;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+view.zzz>.multi_zzz {
+  display: inline-block;
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #dad7d5;
+  padding: 2rpx 0 0 6rpx;
+  border-radius: 0.125rem;
+  margin-top: 0;
+  border: 1px solid transparent;
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+view.zzz>.multi_zzz>image {
+  float: left;
+  display: inline-block;
+  width: 0.8125rem;
+  height: 0.8125rem;
+  margin: 5rpx 5rpx;
+}
+
+view.stationPart_zzz {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.52);
+}
+
+view.stationPart_zzz>span {
+  width: 130rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+view.stationPart_zzz>span:last-child {
+  width: auto;
+}
+
+image.drop_down_zzz {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* 单个可用油站模块 */
+
+.this_station_single {
+  /* padding-bottom:  30rpx ; */
+}
+
+.this_station_single>.info {
+  min-height: 30rpx;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.36);
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  line-height: 36rpx;
+  margin: 25rpx 0;
+  align-items: center;
+}
+
+.this_station_single>.main_part {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25rpx;
+}
+
+.this_station_single>.main_part>.left {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.this_station_single>.main_part>.left>image.station_pic {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 6rpx;
+}
+
+.this_station_single>.main_part>.left>.stationname {
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  color: rgba(0, 0, 0, 0.52);
+}
+
+/* 多个可用油站模块 */
+
+view.stationPart_zzz {
+  width: 70%;
+  height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+view.stationPart_zzz>.info {
+  width: 100%;
+  display: block;
+}
+
+.station_title {
+  margin: 0;
+}
+
+.station_title>.info {
+  min-height: 30rpx;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.36);
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  line-height: 36rpx;
+  margin: 25rpx 0;
+  align-items: center;
+}
+
+.station_title>.main_part {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unavail {
+  width: 100%;
+  min-height: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25rpx;
+  font-size: 28rpx;
+  color: #ff3b30;
+  line-height: 40rpx;
+
+}
+/* 优惠券右上角 */
+image.first_pay{
+  width:60px; 
+  height: 10rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}
+
+image.date_pass{
+  width:50px; 
+  height: 10rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}
+page,.bg{
+  height: 100%;
+}
+
+.coupon_discount_value{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+.ticket_value_discount{
+  margin: 0 4rpx;
+  margin-right: 12rpx;
+}

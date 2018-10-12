@@ -1,0 +1,520 @@
+/**index.wxss**/
+@import "../../common/common.wxss";
+@import "../common/location_setting/index.wxss";
+
+page {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.banner {
+  width: 100%;
+  height: 360rpx;
+  position: relative;
+  /* z-index: -1; */
+}
+
+.banner image {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  /* z-index: 9; */
+}
+
+.privilege {
+  width: 100%;
+  height: 88rpx;
+  background-color: #fff;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fujinyouzhan {
+  display: inline-block;
+  width: 30%;
+  margin: 0 30rpx;
+  font-size: 28rpx;
+}
+
+.switch {
+  position: relative;
+  width: 156rpx;
+  height: 54rpx;
+  background-color: #ffa509;
+  margin: 9rpx 22rpx 0 0;
+  border-radius: 54rpx;
+}
+
+.switch text {
+  display: block;
+  width: 118rpx;
+  height: 100%;
+  color: #fff;
+  line-height: 54rpx;
+  margin-left: 19rpx;
+}
+
+.switch-ball {
+  position: absolute;
+  height: 38rpx;
+  width: 38rpx;
+  border-radius: 38rpx;
+  background-color: #fff;
+  top: 8rpx;
+  left: 12rpx; /* 106 */
+}
+
+.stationList {
+  margin-top: 90rpx;
+}
+
+.wantmore {
+  width: 216rpx;
+  height: 48rpx;
+  margin: 20rpx;
+}
+
+.select {
+  width: 300rpx;
+  height: 56rpx;
+  margin: 16rpx 10rpx;
+  font-size: 25rpx;
+  line-height: 32rpx;
+  border-radius: 4rpx;
+}
+
+.oils {
+  width: 46rpx;
+  height: 32rpx;
+  font-family: "PingFang-SC-Semibold";
+  margin: 12rpx 0 12rpx 10rpx;
+}
+
+.unfold {
+  width: 14rpx;
+  height: 8rpx;
+  display: block;
+  margin: 22rpx 0 22rpx 6rpx;
+}
+
+.country-price {
+  width: 200rpx;
+  height: 32rpx;
+  margin: 12rpx 0 12rpx 14rpx;
+}
+
+.select-option {
+  position: absolute;
+  top: 88rpx;
+}
+
+.select-option-item {
+  background-color: #f8f8f8;
+  height: 128rpx;
+  border-top: 1px solid #ccc;
+}
+
+.gou {
+  width: 28rpx;
+  height: 28rpx;
+  margin: 50rpx 30rpx 0 0;
+}
+
+.oilNameOilType {
+  width: 146rpx;
+  height: 56rpx;
+  font-size: 35rpx;
+  line-height: 56rpx;
+  margin: 34rpx 0 0 30rpx;
+}
+
+.country-price2 {
+  width: 192rpx;
+  height: 32rpx;
+  font-size: 25rpx;
+  line-height: 32rpx;
+  margin: 48rpx 0 0 50rpx;
+}
+
+.bottom_part {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 62rpx;
+  /* background-color: #fff; */
+  text-align: center;
+}
+
+.bottom_part>image.button_yjjj {
+  width: 260rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -130rpx;
+  top: -40rpx;
+}
+
+.bottom_part>image.bottom_bar {
+  width: 100%;
+  height: 140rpx;
+  position: absolute;
+  left: 0;
+}
+
+/* 一件加油蒙版 */
+
+@keyframes animation {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(1.2) rotateX(45deg);
+    transform: scale(1.2) rotateX(45deg);
+  }
+
+  to {
+  }
+}
+
+.onekey_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  overflow: hidden;
+  animation: animation ease 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: backwards;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transition: ease-in-out 0.2s;
+}
+.pop_box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pop_box_item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  height: 760rpx;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 8rpx;
+  margin-top: 20%;
+  z-index: 999;
+}
+
+.enable {
+  display: block;
+}
+
+.disable {
+  display: none;
+}
+
+image.card_banner {
+  width: 100%;
+  height: 340rpx;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+}
+
+.qqr {
+  font-size: 24rpx;
+  color: #9b9b9b;
+  margin-top: 20rpx;
+}
+
+.yz {
+  font-size: 40rpx;
+  color: #222;
+  margin-top: 40rpx;
+  font-weight: bold;
+}
+
+.dizhi {
+  font-size: 24rpx;
+  color: #222;
+  margin-top: 20rpx;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.button_group {
+  position: absolute;
+  bottom: 50rpx;
+  display: flex;
+}
+
+.button_group>button:first-child {
+  width: auto;
+  background-color: #ff7a21;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.button_group>button:last-child {
+  width: auto;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.close_part {
+  background-color: transparent;
+}
+
+.bottom_bar {
+  position: absolute;
+  /* top: -40rpx; */
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.button_closeyjjj {
+  width: 260rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -130rpx;
+  top: -40rpx;
+}
+
+/* 广告蒙版 */
+
+.guanggao_mask {
+}
+
+.guanggao_image {
+}
+
+.gg_close {
+  width: 72rpx;
+  position: absolute;
+  bottom: -120rpx;
+  margin-left: -36rpx;
+}
+
+.mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  z-index: 22;
+}
+
+.login {
+  width: 70%;
+  height: 220rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 118rpx;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  z-index: 33;
+}
+
+/* 获取用户信息样式 */
+
+.welcome {
+  color: #000;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 30rpx 36rpx;
+  box-sizing: border-box;
+}
+
+.button_b {
+  border-top: 1px solid #dfdfdf;
+  width: 100%;
+  background-color: transparent;
+  color: #09bb07;
+  height: 80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 16px;  */
+}
+
+/*justify-content: center;主轴方向居中  */
+
+/*align-items: center; 交叉轴方向居中  */
+
+/*align-content: center; 多行时候交叉轴方向居中,单行无效果https://segmentfault.com/q/1010000007517537?_ea=1369296  */
+
+.virtical_center {
+  direction: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*font-family: PingFangSC-Regular;  */
+
+.activity_text {
+  font-size: 24rpx;
+  line-height: 10rpx;
+  color: rgba(0, 0, 0, 0.46);
+  margin-left: 16rpx;
+}
+
+/* margin-top: 16rpx 在clear:both情况下不生效 */
+
+.stationBottomLine {
+  height: 8rpx;
+  background: #eee;
+  clear: both;
+}
+
+/* 设置页 */
+
+/* 
+@keyframes page_in {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes page_out {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+.setting_page{
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  
+} */
+
+/* 维护中 */
+
+.repair {
+  display: inline-block;
+  width: auto;
+  padding: 6rpx;
+  box-sizing: border-box;
+  height: 37rpx;
+  color: #333;
+  line-height: 25rpx;
+  font-size: 25rpx;
+  background-color: #ccc;
+  border-radius: 6rpx;
+  margin-left: 10rpx;
+}
+
+view.tab_select_motorcade_private {
+  text-align: right;
+  padding-right: 30rpx;
+  line-height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+view.tab_select_motorcade_private>button {
+  display: inline-block;
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  border: 1px solid #f93;
+  margin: 0;
+  padding: 0;
+}
+
+view.tab_select_motorcade_private>button.button-hover {
+  background-color: #f93;
+  color: #fff;
+}
+
+view.tab_select_motorcade_private>button:active {
+  background-color: #f93;
+  color: #fff;
+}
+
+view.tab_select_motorcade_private>button::after {
+  background-color: transparent;
+  color: #f93;
+}
+
+view.tab_select_motorcade_private>button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+view.tab_select_motorcade_private>button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+view.tab_select_motorcade_private>button.grey {
+  background-color: #fff;
+  color: #f93;
+}
+
+/* 没有油站列表 */
+
+.no_station_list {
+  color: #555;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.no_station_list>image {
+  width: 200rpx;
+  text-align: center;
+  margin: auto;
+}
+
+.no_station_list>.all_loaded {
+  font-size: 28rpx;
+  text-align: center;
+  color: #555;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.no_station_list>.no_station_text {
+  text-align: center;
+  font-size: 30rpx;
+  color: #555;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

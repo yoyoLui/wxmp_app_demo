@@ -1,0 +1,89 @@
+page {
+  text-align: center;
+  background-color: #d2d4d6;
+}
+
+.choose_one {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.46);
+  line-height: 50rpx;
+  background-color: #fff;
+}
+
+.platform_list {
+  height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  background-color: #fff;
+}
+
+.platform_list>.list_item {
+  width: 25%;
+  height: 100%;
+}
+
+.platform_list>.list_item>image.logo {
+  width: 160rpx;
+}
+
+.platform_list>.list_item>image.nav {
+  width: 40rpx;
+}
+
+.platform_list>.list_item>view {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.46);
+}
+
+.bottom_view {
+  height: 160rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_view>button {
+  background-color: #ff7a21;
+  color: #fff;
+  width: 90%;
+}
+
+button:active {
+  opacity: 0.4;
+}
+
+.example {
+  width: 400rpx;
+  margin: auto;
+  margin-top: 10rpx;
+}
+
+.ino {
+  width: 240rpx;
+  margin: auto;
+  background: #969696;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+
+.rutu {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.46);
+  margin-top: 12rpx;
+}
+
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  background-color: #ccc;
+  color: #fff;
+}
+.upload_view{
+  height: 800rpx;
+}

@@ -1,0 +1,207 @@
+@import "../../common/common.wxss";
+
+page {
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  height: 160rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+
+.station_img {
+  width: 144rpx;
+  height: 96rpx;
+  background-color: #ccc;
+  margin: 0 32rpx;
+  border-radius: 5rpx;
+}
+
+.right {
+  flex: 1;
+  height: 96rpx;
+  position: relative;
+}
+
+.station_name {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.price_and_oil {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 34rpx;
+  color: #222;
+  font-weight: 500;
+}
+
+.list_item {
+  height: 128rpx;
+  background-color: white;
+  border-top: 1rpx solid rgb(233, 233, 233);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 32rpx;
+  margin-right: 24rpx;
+  margin-top: 5rpx;
+}
+
+.select_icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 32rpx;
+}
+
+.select_text {
+  margin-right: 32rpx;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.payName {
+  font-size: 34rpx;
+  color: #222;
+}
+
+.balance {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm_btn {
+  margin-top: 64rpx;
+  font-size: 34rpx;
+  color: #fff;
+  font-weight: 500;
+}
+
+.pop_double_btn {
+  height: 96rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pop_double_btn text {
+  display: block;
+  flex: 1;
+  text-align: center;
+  font-size: 34rpx;
+  color: #ff7a21;
+}
+
+.retry_btn {
+  font-weight: bold;
+  border-left: 1rpx solid rgb(233, 233, 233);
+}
+
+.input_pwd_box {
+  width: 650rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 280rpx;
+  left: 0;
+  z-index: 1001;
+  background: #fafafa;
+  margin: -100px 50rpx 0 50rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_pwd_top {
+  width: 100%;
+  height: 148rpx;
+  background-color: #f5f5f5;
+  position: relative;
+  border-bottom: 1rpx solid rgb(233, 233, 233);
+}
+
+.input_pwd_title {
+  font-size: 17px;
+  color: #222;
+  font-weight: bold;
+  position: absolute;
+  left: 32rpx;
+  top: 40rpx;
+}
+
+.input_pwd_balance {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.54);
+  position: absolute;
+  left: 32rpx;
+  bottom: 20rpx;
+}
+
+.input_pwd_top image {
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 32rpx;
+}
+
+.input_pwd_bottom {
+  padding-top: 30rpx;
+  padding-bottom: 50rpx;
+}
+
+.input_pwd_bottom text {
+  font-family: PingFangSC-Regular;
+  font-size: 70rpx;
+  color: #222;
+  margin-left: 50rpx;
+  margin-bottom: 40rpx;
+}
+
+.pay_advert_wrap {
+  background-color: #fff8e3;
+  padding: 20rpx 50rpx;
+  margin-top: 30rpx;
+}
+
+.pay_advert_dialog {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.pay_advert_dialog image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 15rpx;
+}
+
+.pay_advert_dialog text {
+  color: #646464;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}

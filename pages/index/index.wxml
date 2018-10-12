@@ -1,0 +1,154 @@
+<!--index.wxml-->
+<page  style='{{!show_pop_box?"overflow:scroll":"overflow:hidden"}}'>
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" style='{{!show_pop_box?"overflow:scroll":"overflow:hidden"}}'>
+    <view wx:if="{{!hide_page}}" style='{{!show_pop_box?"overflow:scroll":"overflow:hidden"}}'>
+      <scroll-view scroll-y="{{!show_pop_box}}" style="{{!show_pop_box?'height: 100%':'height:'+windowHeight+'px'}}" bindscroll="scroll" scroll-top="{{scrollTop}}" enable-back-to-top='true'>
+        <!--banner图页面 start   -->
+        <view class="banner">
+          <!--缓存的banner图  -->
+          <swiper indicator-dots="{{_img_url.length>1}}" class="banner" style="height:360rpx;position:absolute;width:100%;z-index:1;background-color:#fff;">
+            <block wx:for="{{_img_url}}" wx:key="{{index}}">
+              <swiper-item style="z-index:1;">
+                <image src="{{item.img_url}}" style='width:100%;position:relative;' data-url="{{item.url}}" mode="widthFix" bindtap='bannerClick' />
+              </swiper-item>
+            </block>
+          </swiper>
+          <!--网络获取的banner图  -->
+
+          <swiper indicator-dots="{{img_url.length>1}}" class="banner" style="height:360rpx;position:absolute;width:100%;z-index:9;background-color:#fff;">
+            <block wx:for="{{img_url}}" wx:key="{{index}}">
+              <swiper-item style="z-index:9;">
+                <image src="{{item.img_url}}" style='width:100%;position:relative;' data-url="{{item.url}}" mode="widthFix" bindtap='bannerClick' />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <!--banner图页面 end  -->
+        <view class="stationList" style="margin-top:0rpx">
+          <!-- 附近油站 -->
+          <view class="privilege" style="border-bottom:1px solid #eee;" id="test">
+            <view class="fujinyouzhan" catchtouchstart='show_current_version'>附近油站</view>
+            <view class="f-right select" style="background-color:#f2f2f2;color:#646464" wx:if="{{stationListData.carType!=1}}">
+              <picker catchtap="fold" mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{stationListData.contryPriceList}}" range-key="oilName" bindcancel="cancel_call_back" wx:if="{{stationListData.carType!=1&&hasGetStation&&stationListData.contryPriceList}}">
+                <view class="oils f-left">
+                  <view class="picker">{{stationListData.contryPriceList[countryPriceIndex].oilName}}</view>
+                </view>
+                <image class="unfold f-left" mode="widthFix" src="{{pickerButtonClickFlag?'../../img/common/white.png':'../../img/common/grey.png'}}"></image>
+                <view class="country-price f-left">{{stationListData.contryPriceList[countryPriceIndex].countryPrice}}</view>
+              </picker>
+            </view>
+          </view>
+          <!-- 车队身份切换 -->
+          <view class="privilege" style="border-bottom:1px solid #eee;" id="test" wx:if="{{stationListData.isShowChangeCarTypeButton==1}}">
+            <view class="fujinyouzhan" catchtouchstart='show_current_version' style='width:60%;'>本次加油的车是？</view>
+            <view class="f-right tab_select_motorcade_private" style="">
+              <button class="{{toCommonCarType==0?'':'grey'}}" catchtouchstart='click_motorcade_car'>车队车辆</button>
+              <button class="{{toCommonCarType==1?'':'grey'}}" catchtouchstart='click_private_car'>私人车辆</button>
+            </view>
+          </view>
+          <!-- 油站列表顶部分隔条  -->
+          <block wx:if="{{stationListData.stationList.length!=0}}">
+            <view class="gas-station-list" style="width: 100%;background-color: #fff;margin-bottom:100rpx;">
+              <!--油站条目布局  start height: 204rpx;position: relative;-->
+              <view wx:for="{{stationListData.stationList}}" wx:for-item="i" wx:key="i" style="width: 100%;direction: flex; flex-direction: row;" url="" bindtap='click_oilList_item' data-id="{{i.stationId}}" data-closeType="{{i.closeType}}">
+                <image class="f-left" src="{{i.stationPicUrl}}" style="width: 156rpx;height: 144rpx;margin: 30rpx 20rpx 0 20rpx;border-radius: 8rpx;"></image>
+                <!--中部内容布局  start-->
+                <view class="f-left" style="width: 554rpx;">
+                  <!--油站名+评分布局   start-->
+                  <view class="f-clear" style="height: 40rpx;margin-top: 30rpx;">
+                    <text class="f-left" style="color:#323232;font-size: 35rpx;line-height: 40rpx;width: 450rpx;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{i.stationName}}</text>
+                    <text class="f-right" style="color: #efc241;font-size: 25rpx;margin:4rpx 20rpx 0 0;line-height: 32rpx;">{{i.graded}}</text>
+                  </view>
+                  <!--油站名+评分布局   end-->
+                  <!--地标+距离  start-->
+                  <view class="f-clear" style="width: 554rpx;height: 32rpx;margin-top: 8rpx;font-size: 25rpx;line-height: 32rpx;color:rgba(0,0,0,0.26);">
+                    <text class="f-left">{{i.landmark}}</text>
+                    <text class="f-right" style="margin-right: 20rpx">{{i.distance}}km</text>
+                  </view>
+                  <!--地标+距离  end-->
+                  <!--优惠类型+油站价格  start-->
+                  <view class="f-clear" style="width: 554rpx;height: 36rpx;;margin-top: 28rpx;">
+                    <text class="f-left" style="font-size:25rpx;color:{{i.privilegeFlag==1?'#FFA032':'#FF6432'}};line-height: 36rpx;">{{i.privilegeMsg}}<text style="font-size:34rpx;">{{i.privilegeMoney?i.privilegeMoney+'元':''}}</text></text>
+                    <image mode="widthFix" class="f-left" src="{{i.privilegeFlag==1?'../../img/common/yh.png':'../../img/common/jh.png'}}" style="width: 12rpx;height: 18rpx;margin:10rpx 0 0 10rpx;" wx:if="{{!!i.privilegeMoney}}"></image>
+                    <view wx:if="{{i.closeType==1}}" class="repair f-left">{{i.closeReason}}</view>
+                    <text class="f-right" style="font-size: 12.5px;color: #969696;line-height: 16px;margin:2rpx 10rpx 0 0">{{systemInfo.windowWidth>350?i.privilegeOilName:''}} {{i.privilegeOilValue}}</text>
+                  </view>
+                  <!--优惠类型+油站价格  end-->
+                  <view style='height:16rpx;'></view>
+                  <!--分割线  -->
+                  <view style="height: 1px;background: #eee;" wx:if="{{!(i.advertList==null||i.advertList.length==0)}}"></view>
+                  <!--首个条目间隔8px,这里留5px的填充  -->
+                  <view style='height:5px' wx:if="{{!(i.advertList==null||i.advertList.length==0)}}"></view>
+                  <!--活动布局 start  -->
+                  <view wx:for="{{i.advertList}}" wx:for-item="j" wx:key="j" wx:for-index="index" style="flex">
+                    <view style='display: flex;flex-direction: row'>
+                      <image style='width:14px;height:14px;margin-top: 1px' src="{{j.activityIcon}}" mode="widthFix"></image>
+                      <view style='margin-right: 16px;font-size: 12px;line-height:16px;margin-left:8px;font-family: PingFangSC-Regular;color: rgba(0,0,0,0.46);letter-spacing: 0;line-height: 16px;margin-bottom:{{index==(i.advertList.length-1)?"16px":"0px"}}'>{{j.activityDes}}</view>
+                    </view>
+                  </view>
+                  <!--活动布局end  -->
+                </view>
+                <!--中部内容布局  end-->
+                <!--新的底部分隔线  -->
+                <view class='stationBottomLine'></view>
+              </view>
+            </view>
+
+          </block>
+          <block wx:else>
+            <view class="no_station_list">
+              <!-- 没有车队列表 -->
+              <view class="all_loaded">{{state}}</view>
+              <image src="../../img/index/station@3x.png" mode='widthFix'></image>
+              <block wx:if="{{hasGetStation}}">
+                <view class="no_station_text" wx:if="{{stationListData.isShowChangeCarTypeButton==1&&!toCommonCarType}}">附近没有支持车队卡的油站</view>
+                <view class="no_station_text" wx:else>附近没有油站</view>
+              </block>
+
+            </view>
+          </block>
+        </view>
+
+      </scroll-view>
+      <!-- 底部一键加油按钮 -->
+      <view class="bottom_part">
+        <image class="bottom_bar" src="../../img/index/bottom_bar.png" mode='widthFix'></image>
+        <image class="button_yjjj" src="../../img/index/button_yjjj.png" mode='widthFix' catchtap='onekeyButtonClick'></image>
+      </view>
+
+
+      <!-- 用户信息 -->
+      <view class="mask" wx:if="{{show_pop_box_button_getUserInfo}}">
+        <view class="login t-bbb move_down">
+          <view class="welcome">欢迎使用易加油,请授权微信公开信息后进行加油服务</view>
+          <button form-type="submit" class="button_b" open-type='getUserInfo' bindgetuserinfo="click_getUserInfo">知道了</button>
+        </view>
+      </view>
+    </view>
+
+  </form>
+  <!-- 一键加油油站选项卡&&onekey_data.current_animation_index==0 -->
+  <view style='z-index:90;position:fixed;width:100%;height:100%;' wx:if="{{show_pop_box}}">
+    <view class=" onekey_mask yjjy_mask" wx:if="{{show_pop_box}}">
+      <view class="pop_box">
+        <view wx:for="{{onekey_data.station_list}}" wx:key="stationId" wx:for-index="index" wx:for-item="item">
+
+          <view wx:if="{{item.enable}}" catch:touchstart="onekeyTouchStart" catch:touchmove="onekeyTouchMove" catch:touchend="onekeyTouchEnd" animation="{{item.animation}}" class="pop_box_item" style='width:{{item.width}}%;top:-{{item.top}}rpx'>
+            <image class="card_banner" src="{{item.picUrl}}"></image>
+            <view class="qqr">请确认您是否在这个油站</view>
+            <view class="yz">{{item.stationName}}</view>
+            <view class="dizhi">{{item.stationAddress}}</view>
+            <view class="button_group">
+              <button form-type="submit" bindtouchend='onekeyToGun' data-qrcode="{{item.qrCode}}" data-id="{{item.stationId}}">我确认在这个油站</button>
+              <button form-type="submit" catch:touchend="onekeyGoout">不是</button>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class=" bottom_part close_part">
+        <image class="button_closeyjjj" src="../../img/index/button_closeyjjj.png" mode='widthFix' catchtap='onekeyCloseClick'></image>
+      </view>
+    </view>
+  </view>
+
+</page>

@@ -1,0 +1,18 @@
+<template name="gas-station-list">
+<view class="gas-station-list" style="width: 100%;">
+  <view wx:for="{{stationList}}" wx:for-item="i" wx:key="i" style="width: 100%;height: 204rpx;">
+    <image class="f-left" src="{{i.stationPicUrl}}" style="width: 156rpx;height: 144rpx;margin: 30rpx 0 0 20rpx;"></image>
+    <view class="f-left" style="width: 554rpx;">
+      <view class="f-clear">
+        <text class="f-left">{{i.stationName}}</text><text class="f-right">{{i.graded}}</text>
+      </view>
+      <view class="f-clear" style="width: 554rpx;">
+        <text class="f-left">{{i.landmark}}</text><text class="f-right">{{i.distance}}km</text>
+      </view>
+      <view class="f-clear" style="width: 554rpx;">
+        <text class="f-left">{{i.privilegeMsg}}{{i.privilegeMoney}}</text><text class="f-right">{{i.privilegeOilName}}{{i.privilegeOilValue}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+</template>

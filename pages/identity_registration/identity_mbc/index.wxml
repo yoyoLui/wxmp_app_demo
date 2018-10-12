@@ -1,0 +1,18 @@
+<!-- <input value='{{res_img}}'></input> -->
+<!-- <image src="{{res_img}}"></image> -->
+<view class="upImg">
+
+  <view class="zheng" bindtouchstart='chooseImg_zheng'>
+    <image src="{{img_zheng}}"></image>
+  </view>
+  <view class="zheng" bindtouchstart='chooseImg_fu'>
+    <image src="{{img_fu}}"></image>
+  </view>
+
+</view>
+
+<canvas canvas-id='myCanvas' style="opacity:0;"></canvas>
+
+<view class="bottom_view">
+  <button bindtap='submit_info' disabled='{{!zheng_selected||!fu_selected}}'>确认上传</button>
+</view>

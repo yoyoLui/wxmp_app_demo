@@ -1,0 +1,184 @@
+/* pages/paySuccess/paySuccess.wxss */
+
+page {
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.paysuccess_page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+}
+
+.name {
+  margin: 30rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.name image, .price image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 16rpx;
+}
+
+.name text, .price text {
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0rpx 32rpx 30rpx;
+}
+
+.order_sum {
+  display: block;
+  width: 250rpx;
+}
+
+.column_line {
+  width: 1rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  background-color: #ccc;
+}
+
+.activity_div {
+  width: 550rpx;
+  height: 734rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -368rpx -275rpx;
+  overflow: hidden;
+  z-index: 1001;
+  background: #fafafa;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity_div image {
+  width: 100%;
+  height: 100%;
+}
+
+.interval_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0.5;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast_bg {
+  background: #000;
+  color: white;
+  padding: 15rpx;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+}
+
+.red_popu_div {
+  width: 550rpx;
+  height: 734rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -368rpx -275rpx;
+  overflow: hidden;
+  z-index: 1001;
+  background: #fafafa;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.red_popu_img {
+  width: 100%;
+  height: 320rpx;
+}
+
+.red_popu_div .title {
+  font-size: 30rpx;
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.red_popu_div .content {
+  font-size: 26rpx;
+  flex: 1;
+}
+
+.red_popu_div button {
+  background-color: orange;
+  color: white;
+  font-size: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.select_comment {
+  width: 100%;
+  background-color: white;
+  height: 448rpx;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment_question_title {
+  font-size: 34rpx;
+  color: #222;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.comment_list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.comment_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment_item image {
+  width: 104rpx;
+  height: 104rpx;
+}
+
+.comment_item text {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.46);
+  letter-spacing: 0;
+  text-align: center;
+  margin-top: 24rpx;
+}

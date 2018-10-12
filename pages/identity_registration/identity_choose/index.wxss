@@ -1,0 +1,71 @@
+
+page{
+  background-color: #F3F4F5;
+}
+
+.identity_choose .title_info {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 0 20px;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.identity_choose .identity_list {
+  border-top: 1px solid #eee;
+}
+.identity_choose .identity_list .list_item {
+  background-color: #fff;
+  border-bottom: 1px solid #F8F8F8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+.identity_choose .identity_list .list_item image.list_item_car {
+  width: 180rpx;
+}
+.identity_choose .identity_list .list_item view.list_item_content {
+  width: 60%;
+  height: 100%;
+  display: inline-block;
+}
+.identity_choose .identity_list .list_item view.list_item_content view:first-child {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #222;
+  line-height: 60rpx;
+}
+.identity_choose .identity_list .list_item view.list_item_content view:last-child {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.46);
+  line-height: 36rpx;
+}
+.identity_choose .identity_list .list_item view.list_item_content view.font_big {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #222;
+  line-height: 60rpx;
+}
+.identity_choose .identity_list .list_item image.list_item_choose {
+  width: 40rpx;
+}
+.identity_choose button.confirm {
+  width: 90%;
+  height: 88rpx;
+  margin: 60rpx 5%;
+  background: #FF7A21;
+  font-size: 34rpx;
+  color: #fff;
+  border-style: none;
+  border-radius: 6rpx;
+  line-height: 88rpx;
+}
+.identity_choose button:active {
+  opacity: 0.5;
+}
+
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+   background-color: #ccc;
+   color: #fff;
+}

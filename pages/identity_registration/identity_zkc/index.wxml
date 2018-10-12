@@ -1,0 +1,27 @@
+<view class="choose_one">选择一个您常接单的平台</view>
+<view class="platform_list">
+  <view class="list_item" bindtouchstart='click_list_item' data-fromlab="1" data-url="http://img.ejiayou.com/imgs/rsgter_didi.png">
+    <image src="{{fromlab==1?'../../../img/identity_registration/Erefuel_uploadinfo_regsite_didi_selected.png':'../../../img/identity_registration/Erefuel_uploadinfo_regsite_didi.png'}}" mode='widthFix' class="logo"></image>
+    <image src="../../../img/identity_registration/Triangle@3x.png"  mode='widthFix' class="nav" wx:if="{{fromlab==1}}"></image>
+  </view>
+  <view class="list_item" bindtouchstart='click_list_item' data-fromlab="2" data-url="http://img.ejiayou.com/wxmp/register/meituan.png">
+   <image src="{{fromlab==2?'../../../img/identity_registration/Erefuel_uploadinfo_regsite_meituan_selected.png':'../../../img/identity_registration/Erefuel_uploadinfo_regsite_meituan.png'}}" mode='widthFix' class="logo"></image>
+     <image src="../../../img/identity_registration/Triangle@3x.png"  mode='widthFix' class="nav" wx:if="{{fromlab==2}}"></image>
+  </view>
+  <view class="list_item" bindtouchstart='click_list_item' data-fromlab="3" data-url="http://img.ejiayou.com/wxmp/register/Erefuel_ios9_uploadinfo_regsite_shenzhou_example.png">
+   <image src="{{fromlab==3?'../../../img/identity_registration/Erefuel_uploadinfo_regsite_shenzhou_selected.png':'../../../img/identity_registration/Erefuel_uploadinfo_regsite_shenzhou.png'}}" mode='widthFix' class="logo"></image>
+     <image src="../../../img/identity_registration/Triangle@3x.png"  mode='widthFix' class="nav" wx:if="{{fromlab==3}}"></image>
+  </view>
+  <view class="list_item" bindtouchstart='click_list_item' data-fromlab="4" data-url="http://img.ejiayou.com/wxmp/register/Erefuel_ios9_uploadinfo_regsite_yidaoexample.png">
+   <image src="{{fromlab==4?'../../../img/identity_registration/Erefuel_uploadinfo_regsite_others_selected.png':'../../../img/identity_registration/Erefuel_uploadinfo_regsite_others.png'}}" mode='widthFix' class="logo"></image>
+     <image src="../../../img/identity_registration/Triangle@3x.png"  mode='widthFix' class="nav" wx:if="{{fromlab==4}}"></image>
+  </view>
+</view>
+<view class="upload_view" style="{{'margin-top:'+mtHeight+'rpx'}}">
+  <image class="example" src="{{tempFilePaths}}"  mode='widthFix'></image>
+  <view class="ino">我不知道怎么截图？</view>
+  <view class="rutu">如图所示，请打开美团打车司机端“我的车辆”页面进行截图</view>
+</view>
+<view class="bottom_view">
+  <button bindtap='uploadImg' disabled='{{disabled_button}}'>上传截图</button>
+</view>

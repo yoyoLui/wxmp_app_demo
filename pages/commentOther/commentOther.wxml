@@ -1,0 +1,22 @@
+<view class='line' wx:if="{{commentTitle != ''}}"></view>
+<view class='comment_list' wx:if="{{commentTitle != ''}}">
+  <image src='../../img/common/tag.png'></image>
+  <text class='comment_title'>{{commentTitle}}：</text>
+  <text class='comment_des'>{{commentDes}}</text>
+</view>
+<view class='line'></view>
+<view wx:for="{{otherCommentList}}" wx:key="index" class='other_comment_list' wx:for-index="index">
+  <text class='title'>{{item.title}}</text>
+  <text class="{{item.isSelect ? 'score_select' : 'score_unselect'}}">{{item.score}}</text>
+  <view class='icons'>
+    <view wx:for="{{item.icons}}" wx:key="{{index}}" wx:for-item="item2" wx:for-index="index2" data-textparent='{{index}}' data-iconparent='{{item.type}}' data-child='{{index2}}' bindtap='onClickIcon'>
+      <image src='{{item2}}'></image>
+    </view>
+  </view>
+</view>
+
+<view class='input_text'>
+  <textarea placeholder="其他想说的" class='text' placeholder-class='placeholder_text' bindinput='inputComment'></textarea>
+</view>
+
+<button class='saveBtn' disabled='{{disabled}}' type='button' bindtap='submit' style="background-color: {{disabled?'#E0E0E0':'#ff7a21'}}">提交</button>

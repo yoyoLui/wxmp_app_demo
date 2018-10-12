@@ -1,0 +1,44 @@
+
+@import "../../common/common.wxss";
+page{
+	background-color: #eff2f4;
+}
+.input-1{
+	margin-top: 32rpx;
+	height:104rpx;
+}
+.text-1{
+	height:78rpx;
+	line-height:60rpx;
+}
+.text-1 text{
+	color:#aaa;
+	margin-left:32rpx;
+	font-size: 30rpx;
+}
+.option view{
+	font-size:32rpx;
+	line-height: 100rpx;
+	width: 690rpx;
+	height:100rpx;
+	border-bottom: 1px solid #e8e8e8;
+}
+.option .ticket{
+	border: none;
+}
+.invoice{
+	margin-top:30rpx;
+	font-size:32rpx;
+	height:100rpx;
+	line-height: 100rpx;
+}
+.invoice-hover{
+	background-color: #000;
+}
+.submit{
+	margin-top: 30rpx;
+}
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  background: #ccc;
+  color:#fff;
+}

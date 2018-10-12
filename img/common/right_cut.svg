@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="5px" height="16px" viewBox="0 0 5 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>right_cut</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01-1-My-Coupons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-358.000000, -196.000000)">
+        <g id="Coupon" transform="translate(12.000000, 104.000000)" fill="#EDECEB">
+            <g id="Material/Coupon">
+                <path d="M350.402577,102.102966 L346.75791,108 L346.75791,92 L350.402577,97.8970336 C351.199141,99.185865 351.199141,100.814135 350.402577,102.102966 Z" id="right_cut" transform="translate(348.878955, 100.000000) scale(-1, 1) translate(-348.878955, -100.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

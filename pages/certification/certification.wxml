@@ -1,0 +1,31 @@
+<view>
+  <!-- 请填写真实姓名及身份证信息以便安全认证 -->
+  <view class='title'>
+    <text>请填写真实姓名及身份证信息以便安全认证</text>
+  </view>
+  <!-- 输入框 -->
+  <view class='input_div'>
+    <view class='input_name'>
+      <text>姓名</text>
+      <input type='text' placeholder='请输入您的姓名' placeholder-class='name_ph' class='name' bindinput='inputName'></input>
+    </view>
+    <view class='line'></view>
+    <view class='input_num'>
+    <text>身份证</text>
+      <input type='text' placeholder='请输入您的身份证' placeholder-class='num_ph' class='num' bindinput='inputNum' maxlength='18'></input>
+    </view>
+  </view>
+  <button class='confirm_btn' type='button' bindtap="identityAudit" disabled='{{disabled}}' style="background-color: {{disabled?'#E0E0E0':'#ff7a21'}}">确认</button>
+</view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus == 'identity'}}"></view>
+<!-- 去设置弹框 -->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus == 'identity'}}">
+   <view class='pop_title'>
+    <text>{{failMsg}}</text>
+  </view>
+  <view bindtap="powerDrawer" data-statu="close" class='pop_btn'>
+    <text>确定</text>
+  </view>
+</view>

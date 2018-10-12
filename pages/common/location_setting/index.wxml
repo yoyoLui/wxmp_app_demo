@@ -1,0 +1,15 @@
+
+
+<view class="common_part page_in" >
+  <image class="logo_image" src="../../../img/common/illustration-location@3x.png"></image>
+  <view class="can_not_location">无法定位到当前油站</view>
+  <view class="qingdao">
+    请到“设置”中打开获取地理位置的权限，进行买单
+  </view>
+  <view>
+    <!-- <button class="setting" catchtouchstart='click_setting'>去设置</button> -->
+     <!-- <button  class="setting" open-type="openSetting" bindopensetting="click_setting">去设置</button> -->
+     <button  class="setting" bindtouchstart='click_setting'>去设置</button>
+    <button class="cancel" catchtouchstart='cancel'>取消</button>
+  </view>
+</view>

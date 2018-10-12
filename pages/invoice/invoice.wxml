@@ -1,0 +1,43 @@
+<view class="common_container">
+  <scroll-view style='height:{{height}}px;' scroll-y='{{scrollY}}' class='msg-list'>
+    <!-- 需要打发票 -->
+    <view class='select_invoice_title'>
+      <text>选择您要打印的发票抬头</text>
+    </view>
+    <view wx:for="{{msgList}}" wx:key="id" class='msg-item' animation='{{item.wrapAnimation}}'>
+      <!-- 发票内容 -->
+      <view id='{{item.id}}' class='msg' animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend' bindtap='onClickItem' data-index='{{item.user_invoice_id}}'>
+        <view class='left'>
+          <text class='invoice_name'>{{item.invoice_code}}</text>
+          <text class='invoice_num' wx:if="{{item.invoice_number != ''}}">纳税人号：{{item.invoice_number}}</text>
+        </view>
+        <view class='right'>
+          <image src='{{item.selectIcon}}'></image>
+        </view>
+      </view>
+      <!-- 删除按钮 -->
+      <view class='msg-menu'>
+        <view id='{{item.id}}' class='menu-delete' bindtap='onDeleteMsgTap' bindlongtap='onDeleteMsgLongtap' data-id='{{item.user_invoice_id}}'>
+          删除
+        </view>
+      </view>
+    </view>
+    <!-- 添加发票抬头 -->
+    <view class='add_invoice_btn' bindtap='addInvoiceBtn'>
+      <image src='../../img/common/add.png'></image>
+      <text>添加发票抬头</text>
+    </view>
+
+    <!-- 不需要打发票 -->
+    <view class='unselect_invoice_title' wx:if="{{msgList.length>0}}">
+      <text>不需要打印发票抬头</text>
+    </view>
+    <view class='unselect_invoice_item' bindtap='unNeedInvoiceClick' wx:if="{{msgList.length>0}}">
+      <text>不要发票</text>
+      <view class='right'>
+        <image src='{{unselect_icon}}'></image>
+      </view>
+    </view>
+  </scroll-view>
+  <loading hidden="{{hiddenLoading}}">{{loadingMsg}}</loading>
+</view>

@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/gun/gun",
+    "pages/details/details",
+    "pages/pay2/pay2",
+    "pages/pay/pay",
+    "pages/paySuccess/paySuccess",
+    "pages/setPwd/setPwd",
+    "pages/setPwdSuccess/setPwdSuccess",
+    "pages/ticket/ticket",
+    "pages/invoice/invoice",
+    "pages/web/web",
+    "pages/successEvaluate/successEvaluate",
+    "pages/commentOther/commentOther",
+    "pages/certification/certification",
+    "pages/addInvoice/addInvoice",
+    "pages/six_inputgun_webview/index/index",
+    "pages/six_inputgun_webview/inputgun/inputgun",
+    "pages/common/location_setting/index",
+    "pages/web_H5/identify_private_car/index",
+    "pages/identity_registration/identity_choose/index",
+    "pages/identity_registration/identity_success/index",
+    "pages/identity_registration/not_support_identity/index",
+    "pages/identity_registration/identity_zkc/index",
+    "pages/identity_registration/identity_mbc/index",
+    "pages/redirect_to_other_miniapps/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarTitleText": "易加油",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "enablePullDownRefresh": true
+  }
+}

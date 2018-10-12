@@ -1,0 +1,390 @@
+@import "../../common/common.wxss";
+page{
+	background-color: #eff2f4;
+}
+.gas-station{
+	position: relative;
+	height: 376rpx;
+}
+.gas-station>image{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 750rpx;
+	height: 376rpx;
+}
+.gas-station-info{
+	position: absolute;
+	bottom: 0;
+	height:100rpx;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 30rpx;
+	color: #DDD;
+}
+.gas-station-info text{
+	margin-left: 20rpx;
+}
+.gas-station-info .position{
+	display: flex;
+	align-items:center;
+	width: 580rpx;
+	height: 100%;
+}
+.gas-station-info .position text{
+		align-items:center;
+}
+.gas-station-info .navigation{
+	width: 160rpx;
+	height: 70rpx;
+	margin-top: 15rpx;
+	border-left:1px solid #fff;
+	line-height: 70rpx;
+	font-size: 32rpx;
+
+}
+.gas-station-info view text{
+	margin-left: 24rpx;
+}
+.gas-station-info image{
+	width: 36rpx;
+	height: 36rpx;
+	margin: 20rpx 28rpx 0 0;
+}
+
+.refuel{
+	height:106rpx;
+	margin-top: 20rpx;
+}
+.refuel-info{
+	height: 100rpx;
+	width: 450rpx;
+	position: relative;
+	margin: 2rpx 0 0 22rpx;
+	overflow:hidden;
+}
+.refuel-info .star{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 150rpx;
+}
+.refuel button{
+	width: 180rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 30rpx;
+	margin: 16rpx 18rpx 0 0;
+}
+.privilege{
+	height: 294rpx;
+	margin-top: 20rpx;
+}
+.hui{
+	width: 708rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	border-bottom: 1px solid #f2f2f2;
+}
+.hui image{
+	margin-top: 18rpx;
+}
+.hui text{
+	width:600rpx;
+	overflow:hidden;
+	font-size: 26rpx;
+	height:70rpx;
+	margin-left: 16rpx;
+}
+.privilege-list{
+	width: 708rpx;
+	overflow: hidden;
+	line-height: 40rpx;
+
+}
+.privilege-list view{
+	width: 141rpx;
+	overflow: hidden;
+}
+.privilege-list text{
+	display: block;
+	width: 141rpx;
+	font-size: 30rpx;
+	margin-top: 12rpx;
+}
+.comment{
+	margin-top: 20rpx;
+}
+.all{
+	height:86rpx;
+	width: 730rpx;
+	margin-left: 20rpx;
+	border-bottom: 1px solid #f2f2f2;
+	line-height: 86rpx;
+}
+.all text{
+	color: #6b6b6b;
+	font-size: 30rpx;
+	margin-right: 18rpx;
+}
+.all image{
+	width: 36rpx;
+	height: 40rpx;
+	margin:22rpx 38rpx 0 0;
+}
+.comment-list{
+	width: 730rpx;
+	margin-left: 20rpx;
+}
+
+/*以下是活动布局样式表 start  padding: 8px 16px;*/
+
+.fill {
+  height: 10px;
+  width: 100%;
+}
+
+.activitiesContainer {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 8px 0px;
+}
+
+.activityItem {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  margin-left: 16px;
+  padding-right: 16px;
+}
+
+.itemRight {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  margin-right: 16px;
+}
+/* padding-right: 16px; margin-right: 16px; margin padding同时设置生 ?这是什么原理
+    隐藏知识点:小程序行内元素与行内块元素宽度都是100%,设置了margin-left之后,元素整体右移16px,所以需要设置margin-right:32px
+
+*/
+.activityDesc {
+  display: flex;
+  flex-direction: column;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.46);
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-left: 8px;
+  padding-right: 32px;
+  box-sizing: border-box;
+}
+
+/*color: #eee;  */
+.activityDivider{
+  height: 1px;
+  width: 100%;
+  background: #eee;
+}
+
+
+.fill2{
+  height: 7px;
+  width: 100%;
+}
+
+/*以下是活动布局样式表 end  */
+
+
+.station_detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.station_phone {
+  height: 88rpx;
+  background-color: white;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.station_detail .phone_tv {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #222;
+  margin-left: 30rpx;
+}
+
+.station_phone image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+}
+
+.station_grade {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.grade_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.grade_top .title {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #222;
+  margin-left: 30rpx;
+}
+
+.station_grade .count {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.26);
+  letter-spacing: 0;
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.grade_body {
+  height: 160rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item {
+  width: 154rpx;
+  height: 128rpx;
+  background-color: #ebebeb;
+  border-radius: 8rpx;
+  position: relative;
+}
+
+.item .show_grade {
+  width: 154rpx;
+  background-color: #fff4e6;
+  border-radius: 8rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.item .show_text {
+  width: 154rpx;
+  height: 128rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.show_text .grade {
+  font-family: PingFangSC-Semibold;
+  font-size: 34rpx;
+  color: #ff7a21;
+  font-weight: bold;
+}
+
+.show_text .grade_des {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.46);
+}
+
+.evaluate_list {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+.evaluate_list image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  border-radius: 30rpx;
+  margin-right: 15rpx;
+}
+
+.evaluate_list_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+}
+
+.name_date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.name_date text {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.46);
+}
+
+.evaluate_list .evaluate {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #222;
+  margin-top: 15rpx;
+  margin-bottom: 30rpx;
+}
+
+.evaluate_list .evaluate_reply {
+  background-color: #f3f4f6;
+  margin-bottom: 30rpx;
+  margin-top: -15rpx;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.46);
+  display: flex;
+  flex-direction: row;
+}
+
+.evaluate_reply .reply_text {
+  margin-left: 15rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  margin-right: 10rpx;
+}
+
+.total_evl {
+  height: 90rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total_evl image {
+  width: 18rpx;
+  height: 36rpx;
+  margin-right: 30rpx;
+}
+
+.total_evl text {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.46);
+  margin-left: 30rpx;
+}

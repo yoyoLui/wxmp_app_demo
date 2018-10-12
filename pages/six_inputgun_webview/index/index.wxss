@@ -1,0 +1,64 @@
+.containe {
+  /* padding: 62rpx; */
+   box-sizing: border-box; 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 100% 100%;
+}
+
+.welcome {
+  font-family: PingFangSC-Semibold;
+  font-size: 70rpx;
+  color: #000;
+  letter-spacing: 0;
+  line-height: 88rpx;
+  font-weight: bold;
+  margin: 0 62rpx;
+}
+
+.welcome:first-child {
+  margin-top: 12.6%;
+}
+
+.farther {
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: rgba(0, 0, 0, 0.52);
+  letter-spacing: 0;
+  line-height: 48rpx;
+   margin: 0 62rpx;
+  margin-top: 3%;
+}
+
+button {
+  height: 136rpx;
+  line-height: 136rpx;
+  color: #fff;
+  /* width: 100%; */
+  font-size: 36rpx;
+  font-weight: bold;
+   margin: 0 62rpx;
+  margin-top: 168rpx;
+  background: -webkit-linear-gradient(rgba(237, 87, 41, 1), rgba(239, 130, 63, 0.9));
+  border-radius: 4rpx;
+  font-family: PingFangSC-Semibold;
+  letter-spacing: 2rpx;
+  box-sizing: border-box;
+}
+
+image.backImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+button:active {
+  opacity: 0.8;
+  color: #fff;
+}

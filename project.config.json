@@ -1,0 +1,100 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wx115b13ee3613ef26",
+	"projectname": "%E4%B8%80%E9%94%AE%E5%8A%A0%E6%B2%B9",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": -1,
+					"name": "正式环境测试油站",
+					"pathName": "pages/gun/gun",
+					"query": "stationId=12&&from_page=5&q=http%3A//api.ejiayou.com/wxmp/view/wxCode.ac%3FqrId%3D1004%26appId%3Dgh_8abe738e8e98",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "测试环境油枪页",
+					"pathName": "pages/gun/gun",
+					"query": "stationId=12&from_page=5&q=http%3A//dev.ejiayou.com/wxmp/view/wxCode.ac%3FqrId%3D1004%26appId%3Dgh_324686421cfb",
+					"scene": "1011"
+				},
+				{
+					"id": 5,
+					"name": "不支持身份",
+					"pathName": "pages/identity_registration/not_support_identity/index",
+					"query": "limitPrivateCar=2",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "58",
+					"pathName": "pages/index/index",
+					"query": "from_58=true&phone=18680308290",
+					"scene": "1011"
+				},
+				{
+					"id": 6,
+					"name": "58详情页",
+					"pathName": "pages/details/details",
+					"query": "",
+					"scene": "1024"
+				},
+				{
+					"id": 7,
+					"name": "聚能南站",
+					"pathName": "pages/gun/gun",
+					"query": "stationId=53&from_page=5&q=http%3A//www.ejiayou.top/wxmp/view/wxCode.ac%3FqrId%3D10078%26appId%3Dgh_324686421cfb",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "公众号菜单",
+					"pathName": "pages/index/index",
+					"query": "from_source=1",
+					"scene": "1011"
+				},
+				{
+					"id": 7,
+					"name": "优惠券",
+					"pathName": "pages/ticket/ticket",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 8,
+					"name": "跳转其他小程序",
+					"pathName": "pages/redirect_to_other_miniapps/index",
+					"query": "",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

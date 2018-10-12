@@ -1,0 +1,6 @@
+<!--pages/setPwdSuccess/setPwdSuccess.wxml-->
+<view class='setting_success'>
+  <image src='../../img/common/finish_orange.png'></image>
+  <text>设置密码成功</text>
+  <button bindtap='gotopay'>完成</button>
+</view>

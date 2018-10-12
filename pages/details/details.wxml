@@ -1,0 +1,130 @@
+<import src="../../templates/comment-list.wxml" />
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class="gas-station">
+    <image src="../../img/common/default1.jpg"></image>
+    <image src="{{detail.stationImageUrl}}" animation="{{bannerAnimation}}" style='opacity: 0' bindload='imgLoadAnimation' wx:if='{{detail.stationImageUrl}}'></image>
+    <view class="gas-station-info">
+      <view class="f-left position">
+        <text>{{detail._stationAddress}}</text>
+      </view>
+      <view class="f-right navigation" bindtap="test">
+        <text class="f-left">导航</text>
+        <image src="../../img/common/go.png" class="f-right"></image>
+      </view>
+    </view>
+  </view>
+  <view class="refuel bg-white">
+    <view class="f-left refuel-info">
+      <view class="f-left star">
+        <image src="../../img/common/unstar.png" style="width: 28rpx;height: 28rpx;margin-top: 15rpx;" wx:for="{{[1,2,3,4,5]}}" wx:key="item"></image>
+        <view wx:for="{{[1,2,3,4,5]}}" wx:key="item" style="position: absolute;width: {{(detail.stationPoint-index)>1?28:((detail.stationPoint-index)<0?0:(detail.stationPoint-index)*28)}}rpx;height: 28rpx;top:15rpx;left: {{index*28}}rpx;overflow: hidden;font-size: 15rpx;">
+          <image src="../../img/common/star.png" style="width: 28rpx;height: 28rpx;"></image>
+        </view>
+      </view>
+      <text style="color: #ffcf08; font-size: 30rpx;display: block;position: absolute;top:16rpx;left:170rpx;line-height: 30rpx;">{{detail.stationPoint}}</text>
+      <view style="margin-top: 0rpx;position: absolute;top:50rpx;">
+        <text style="font-size: 30rpx;" class="t-555">{{detail.stationTips}}</text>
+      </view>
+    </view>
+    <button form-type="submit" class="f-right" bindtap="toGun">优惠加油</button>
+  </view>
+
+  <!--活动布局 start  -->
+  <view style='height:15px,width:100%;background:#FF0000'></view>
+  <!--填充灰色间隔 start  -->
+  <view class='fill' wx:if="{{!(detail.DiscountInfo==null||detail.DiscountInfo.length==0)}}"></view>
+  <!--填充灰色间隔 end  -->
+
+  <view class='activitiesContainer' wx:if="{{!(detail.DiscountInfo==null||detail.DiscountInfo.length==0)}}">
+    <view wx:for="{{detail.DiscountInfo}}" wx:for-item="j" wx:key="j" wx:for-index="index" class='activityItem'>
+      <image style='width:14px;height:14px;margin-top: 4px' src='{{j.url}}' mode="widthFix"></image>
+      <view class='activityDesc'>
+        <view>{{j.describe}}</view>
+        <view class='fill2'></view>
+        <view class='activityDivider' wx:if="{{!(index==(detail.DiscountInfo.length-1))}}"></view>
+      </view>
+
+    </view>
+  </view>
+  <!--活动布局 end  -->
+
+  <view class="privilege bg-white">
+    <view class="hui m-center-h" wx:if="{{detail.JBInfos.text != ''}}">
+      <image src="{{detail.JBInfos.type==2?'../../img/common/hui.png':'../../img/common/297484774507312141.jpg'}}" class="f-left" style="{{detail.JBInfos.type==2?'height: 36rpx;width: 36rpx':'height: 36rpx;width: 83rpx'}}"></image>
+      <text class="t-aaa f-left">{{detail.JBInfos.text}}</text>
+    </view>
+    <view class="privilege-list m-center-h">
+      <view class="f-left">
+        <text wx:for="{{privilegeListOption}}" class="t-aaa" wx:for-item="item" wx:key="item">{{item}}:</text>
+      </view>
+      <view class="f-left" wx:for="{{privilegeListValue}}" wx:key="item" style="">
+        <text style="color: #209c66">{{item['油品']}}</text>
+        <text class="t-line t-aaa">{{item['国家价']}}</text>
+        <text class="t-line t-aaa">{{item['油站价']}}</text>
+        <text style="color: #ac2b2f">{{item['优惠价']}}</text>
+      </view>
+    </view>
+  </view>
+</form>
+
+<view class='station_detail'>
+  <!-- 油站电话 -->
+  <view class='station_phone' bindtap='callPhone'>
+    <text class='phone_tv'>油站电话：{{stationPhone}}</text>
+    <image src='../../img/common/button_call.png'></image>
+  </view>
+  <!-- 油站评分 -->
+  <view class='station_grade' wx:if="{{isHasGrade}}">
+    <view class='grade_top'>
+      <text class='title'>大家评论</text>
+      <text class='count'>{{questionTotal}}人评价</text>
+    </view>
+    <view style='display:flex;fflex-direction: row;'>
+      <!-- 占位 -->
+      <text style='width:30rpx;'></text>
+      <view class='grade_body'>
+        <view class='item' wx:for="{{stationGradeList}}" wx:key="{{index}}">
+          <view class='show_grade' style='height:{{item.showHeigth}}rpx;'></view>
+          <view class='show_text'>
+            <text class='grade'>{{item.avgGrade}}</text>
+            <text class='grade_des'>{{item.depict}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 占位 -->
+      <text style='width:30rpx;'></text>
+    </view>
+  </view>
+  <!-- 详情列表 -->
+  <view style='background:#fff;padding-top:15rpx;padding-bottom:15rpx;' wx:if="{{!isHasGrade && isHasEvaluateList}}">
+    <text style='font-size: 28rpx;color: #222222;margin-left:30rpx;'>大家评论</text>
+  </view>
+  <view wx:for="{{evaluateList}}" wx:key="{{index}}" style='display:flex;flex-direction: column;' wx:if="{{isHasEvaluateList}}">
+    <view class='evaluate_list'>
+      <!-- 左边的头像 -->
+      <image src="{{item.headUrl == '' ? '../../img/common/default_icon.png' : item.headUrl}}"></image>
+      <!-- 右边的文案 -->
+      <view class='evaluate_list_right'>
+        <!-- 手机号跟日期 -->
+        <view class='name_date'>
+          <text>{{item.nickName == "" ? "匿名用户":item.nickName}}</text>
+          <text>{{item.createTime}}</text>
+        </view>
+        <!-- 评论 -->
+        <text class='evaluate'>{{item.content}}</text>
+        <!-- 回复 -->
+        <view class='evaluate_reply' wx:if="{{item.replylist.length != 0}}" wx:for="{{item.replylist}}" wx:for-item="ritem" wx:key="{{index}}">
+          <view class='reply_text'>
+            <text>{{ritem.appendTitle}}{{ritem.appendConent}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style='height:1rpx;background-color:rgba(245,245,245, 0.1);'></view>
+  </view>
+  <!-- 全部评价 -->
+  <view class='total_evl' bindtap='totalEvaluate' wx:if="{{isHasEvaluateList}}">
+    <text>查看全部评论({{total}})</text>
+    <image src='../../img/common/XS.png'></image>
+  </view>
+</view>

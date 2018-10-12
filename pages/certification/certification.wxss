@@ -1,0 +1,62 @@
+/* pages/certification/certification.wxss */
+
+page {
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 24rpx 0 16rpx 32rpx;
+}
+
+.input_div {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-top: 1rpx solid rgb(233, 233, 233);
+  border-bottom: 1rpx solid rgb(233, 233, 233);
+}
+
+.input_name, .input_num {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 104rpx;
+}
+
+.input_name text, .input_num text {
+  width: 200rpx;
+  padding-left: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.name_ph, .num_ph {
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.name, .num {
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: #222;
+}
+
+.confirm_btn {
+  margin-top: 64rpx;
+  background-color: #ff7a21;
+  font-size: 34rpx;
+  color: #fff;
+  font-weight: 500;
+  margin: 50rpx 32rpx;
+}
+
+
+

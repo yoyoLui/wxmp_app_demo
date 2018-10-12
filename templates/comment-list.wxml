@@ -1,0 +1,13 @@
+<template name="comment-list">
+	<view style="height: 228rpx;font-size: 30rpx;border-bottom: 1px solid #f2f2f2" wx:for="{{data}}" wx:for-item="i">
+		<view style="height: 84rpx;line-height: 84rpx">
+			<text class="f-left t-555">{{i.user}} ({{i.gas}} {{i.price}}元)</text>
+			<text class="f-right t-aaa" style="font-size: 24rpx;margin-right: 22rpx;">{{i.date}}</text>
+		</view>
+		<view>
+			<image src="../../img/common/unstar.png" style="width: 36rpx; height: 36rpx" wx:for="{{[1,2,3,4,5]}}"></image>
+		</view>
+		<view style="margin-top: 0rpx;font-size: 28rpx; overflow: hidden;height: 80rpx;width: 688rpx;text-overflow: ellipsis;">{{i.content}}
+		</view>
+	</view>
+</template>

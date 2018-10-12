@@ -1,0 +1,12 @@
+<view class="not_support_identity">
+  <image src="../../../img/identity_registration/error@3x.png" alt=""></image>
+  <view class="error_title" id="error_title">{{error_title}}</view>
+  <view class="error_reason" id="error_reason">{{error_reason}}</view>
+  <view class="ikonw_else" id="ikonw_else" wx:if="{{ikonw_else}}">
+    <view class="iprivate" bindtap='back_to_index'>我是私家车用户，我知道了</view>
+    <view class="not_support_line"></view>
+    <view class="ioperating_car" bindtap='click_to_register'>我是营运车司机，我想享受优惠</view>
+  </view>
+  <view class="ikonw" id="ikonw"  wx:else bindtap='back_to_index'>我知道了</view>
+
+</view>

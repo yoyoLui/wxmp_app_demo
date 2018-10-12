@@ -1,0 +1,49 @@
+<!--pages/paySuccess/paySuccess.wxml-->
+<view class='paysuccess_page'>
+  <view class='name'>
+    <image src='../../img/common/gas.png'></image>
+    <text bindtap='test'>{{station_name}}</text>
+  </view>
+  <view class='price'>
+    <image src='../../img/common/yuan2.png'></image>
+    <text class='order_sum'>{{orderSum}}元</text>
+    <view class='column_line'></view>
+    <image src='../../img/common/hui2.png'></image>
+    <text class='discount_price'>{{discount_price}}元</text>
+  </view>
+</view>
+
+<view wx:if="{{isShowToast}}">
+  <view class='interval_screen'>
+    <view class='toast_bg'>
+      <text>{{toastMsg}}</text>
+    </view>
+  </view>
+</view>
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!-- 去设置弹框 -->
+<view animation="{{animationData}}" class="activity_div" wx:if="{{showModalStatus == 'paysuccess'}}">
+  <image src='{{imgUrl}}' bindtap='onclick'></image>
+</view>
+<!-- 红包弹窗 -->
+<view animation="{{animationData}}" class="red_popu_div" wx:if="{{showModalStatus == 'redpopupwindow'}}">
+  <image src='{{miniData.banner}}' class='red_popu_img'></image>
+  <text class='title'>{{miniData.title}}</text>
+  <text class='content'>{{miniData.message}}</text>
+  <button bindtap='share' data-statu="close">分享拆红包</button>
+</view>
+
+<!-- 选择评论 -->
+<view class='select_comment' animation="{{commentAnimationData}}" wx:if="{{showCommentModal}}">
+  <view style='margin: 64rpx;'>
+    <text class='comment_question_title'>{{evlQuestion}}</text>
+  </view>
+  <view class='comment_list'>
+    <view wx:for="{{list}}" wx:key="{{index}}" data-index='{{index}}' class='comment_item' bindtap='onClickCommentItem'>
+      <image src='{{item.icon}}'></image>
+      <text>{{item.gradeName}}</text>
+    </view>
+  </view>
+</view>

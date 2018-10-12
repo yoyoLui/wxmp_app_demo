@@ -1,0 +1,14 @@
+<view  class="containe" style="width:100%;height:100%; background-image:url('https://img.ejiayou.com/experience_app_img/yuangang/inputgun_webview/background.png');">
+<!-- <image class="backImg" src=""></image> https://img.ejiayou.com/experience_app_img/yuangang/inputgun_webview/background.png-->
+  <view class="welcome" style=" margin-top: 100rpx;" >欢迎来到</view>
+
+
+  <view class="welcome">元岗加油站</view>
+  <view class="farther">广交能源，路行更远</view>
+
+  <form bindsubmit="buttonClick" report-submit='true'>
+
+    <button form-type="submit" bind:touchstart="jump">点此付款</button>
+  </form>
+
+</view>

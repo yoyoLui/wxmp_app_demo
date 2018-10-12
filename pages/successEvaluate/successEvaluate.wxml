@@ -1,0 +1,7 @@
+<!--pages/successEvaluate/successEvaluate.wxml-->
+<view class='setting_success'>
+  <image src='../../img/common/finish_orange.png'></image>
+  <text class='title'>评价成功</text>
+  <text class='sub_title' wx:if="{{isShowSubTiltle}}">感谢你对本油站的支持</text>
+  <button bindtap='onClick'>{{btn_text}}</button>
+</view>

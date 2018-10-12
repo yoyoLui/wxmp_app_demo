@@ -1,0 +1,199 @@
+<section>
+  <view class="bg">
+    <!-- 如果有优惠券数据，则展示优惠券，如果没有则展示“暂无优惠券” -->
+    <view class="container_conpon" wx:if="{{ticket_data.avlCouponNum!=0||ticket_data.invalidCouponNum!=0}}">
+      <view class="no_use_ticket" catchtap="clickTicket_item" wx:if="{{ticket_data.avlCouponNum>0}}" data-id="">
+        <span class="no_use_ticket_text">
+          不使用优惠券
+        </span>
+        <image mode="widthFix" src="{{merchandiseSelect.userCouponId==''?'../../img/common/Selected.png':'../../img/common/Unselected.png'}}" alt="" class="drop_down"></image>
+      </view>
+      <view class="ticket_module">
+        <section>
+          <!-- 可用优惠券 -->
+          <view class="title_part" wx:if="{{ticket_data.avlCouponNum>0}}">
+            <view class="have_how_much_ticket">有
+              <span>{{ticket_data.avlCouponNum}}</span>张可用优惠券 </view>
+
+          </view>
+          <view wx:if="{{ticket_data.avlCouponNum>0&&couponInfo_item.enabled==1}}" wx:for="{{ticket_data.couponInfoToExPayList}}" wx:for-item="couponInfo_item" catchtap="clickTicket_item" wx:key="type" class="ticket_item" data-id="{{couponInfo_item.userCouponId}}">
+
+            <image mode="widthFix" src="../../img/common/Coupon_Decoration.png" alt="" class="dec"></image>
+            <image class="first_pay" src='../../img/ticket/first.png' mode="widthFix" wx:if="{{couponInfo_item.firstPayLogo}}"></image>
+            <image wx:if="{{couponInfo_item.firstPayLogo==0&&couponInfo_item.beAboutToExpire}}" mode="widthFix" class="date_pass" src='../../img/ticket/date.png'></image>
+            <image mode="widthFix" src="../../img/common/right_cut@2x.png" class="right_cut"></image>
+            <image mode="widthFix" src="../../img/common/left_cut@2x.png" class="left_cut"></image>
+            <!-- 改变颜色，在ticket_item_top后面加样式orange，purple，blue-->
+            <view class='{{couponInfo_item.color}}'>
+              <!-- 三种优惠券 -->
+              <view class="ticket_name ">
+                {{couponInfo_item.name}}
+                <span wx:if="{{couponInfo_item.nameExt!=''}}">{{couponInfo_item.nameExt}}</span>
+              </view>
+              <!-- 两种有效期 -->
+              <view class="ticket_detail">
+                <span> {{couponInfo_item.limitTime}}</span>
+                <br/>
+                <span> {{couponInfo_item.limitTimeExplain}}</span>
+              </view>
+
+              <view class="ticket_value_part">
+                <!-- 两种折扣 -->
+                <section wx:if="{{couponInfo_item.couponType==2}}">
+                  <view class="ticket_value_discount">{{couponInfo_item.value1}}<span><span wx:if="{{couponInfo_item.value2}}">.{{couponInfo_item.value2}}</span> 折</span>
+                  </view>
+                  <view class="ticket_value_add">
+                    {{couponInfo_item.valueExplain}}
+                  </view>
+                </section>
+                <section wx:if="{{couponInfo_item.couponType==6}}">
+                  <view class='coupon_discount_value'>
+                    <view class='coupon_discount_value_head_text'>降￥ </view>
+                    <view class="ticket_value_discount">{{couponInfo_item.value}}</view>
+                    <view style='margin-bottom:2px'> /L</view>
+                  </view>
+                  <view class="ticket_value_add">
+                    {{couponInfo_item.valueExplain}}
+                  </view>
+                </section>
+                <section wx:if="{{couponInfo_item.couponType==1||couponInfo_item.couponType==0}}">
+                  <view class="ticket_value_money">
+                    ￥
+                    <span> {{couponInfo_item.value}}</span>
+                  </view>
+                  <view class="ticket_value_add">
+                    {{couponInfo_item.valueExplain}}
+                  </view>
+                </section>
+
+
+              </view>
+              <!-- </view> -->
+            </view>
+            <view class="ticket_item_bottom possible_station">
+              <!-- 两种底部模块 -->
+              <!-- 多个可用油站模块 -->
+              <view wx:if="{{couponInfo_item.stationNum>1}}" class="station_title ">
+                <view class='info' wx:if="{{couponInfo_item.moreRules}}">{{couponInfo_item.moreRules}}</view>
+                <view class='zzz'>
+                  <view class="multi_zzz">
+                    <image wx:for="{{couponInfo_item.limitStations}}" wx:for-item="limitStations_item" wx:key="type" src="{{limitStations_item.url}}" alt="" class="item" wx:if="{{index<=3}}"></image>
+                  </view>
+                  <view class="stationPart_zzz">
+                    <span wx:for="{{couponInfo_item.limitStations}}" wx:for-item="limitStations_item" wx:key="type">
+                      {{limitStations_item.stationName}}、
+                    </span>
+                    <!-- <span style=""> -->
+                    <text>等{{couponInfo_item.stationNum}}个油站专享</text>
+                    <!-- </span> -->
+                  </view>
+                  <image mode="widthFix" src="{{merchandiseSelect.userCouponId==couponInfo_item.userCouponId?'../../img/common/Selected.png':'../../img/common/Unselected.png'}}" alt="" class="drop_down_zzz"></image>
+                </view>
+              </view>
+              <!-- 单个可用油站模块 -->
+              <view wx:if="{{couponInfo_item.stationNum==1}}" class="this_station_single">
+                <view class='info' wx:if="{{couponInfo_item.moreRules}}">{{couponInfo_item.moreRules}}</view>
+                <view class="main_part">
+                  <view class="left">
+                    <image class="station_pic" src="{{couponInfo_item.limitStations[0].url}}" alt=""></image>
+                    <span class="stationname"> {{couponInfo_item.limitStations[0].stationName}}</span>
+                  </view>
+
+                  <image mode="widthFix" src="{{merchandiseSelect.userCouponId==couponInfo_item.userCouponId?'../../img/common/Selected.png':'../../img/common/Unselected.png'}}" alt="" class="drop_down_zzz"></image>
+                </view>
+              </view>
+              <!-- 全部可用油站模块 -->
+              <view wx:if="{{couponInfo_item.stationNum==-1}}" class="this_station_single">
+                <view class='info' wx:if="{{couponInfo_item.moreRules}}">{{couponInfo_item.moreRules}}</view>
+                <view class="main_part">
+                  <view class="left">
+                    <image class="station_pic" src="../../img/common/Logo.png" alt=""></image>
+                    <span class="stationname"> 全部油站可用</span>
+                  </view>
+                  <image mode="widthFix" src="{{merchandiseSelect.userCouponId==couponInfo_item.userCouponId?'../../img/common/Selected.png':'../../img/common/Unselected.png'}}" alt="" class="drop_down_zzz"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="no_avlCoupon_blank" wx:if="{{ticket_data.avlCouponNum==0}}">
+            暂无可用优惠券
+          </view>
+        </section>
+        <section wx:if="{{ticket_data.invalidCouponNum>0}}">
+          <!-- 不可用优惠券 -->
+          <view class="title_part disabled">
+            <view class="have_how_much_ticket">
+              当前不可用的优惠券 </view>
+          </view>
+          <view class="ticket_item" wx:if="{{couponInfo_item.enabled==2}}" wx:for="{{ticket_data.couponInfoToExPayList}}" wx:key="type" wx:for-item="couponInfo_item">
+            <image mode="widthFix" src="../../img/common/Coupon_Decoration.png" alt="" class="dec"></image>
+            <image class="first_pay" src='../../img/ticket/first.png' mode="widthFix" wx:if="{{couponInfo_item.firstPayLogo}}"></image>
+            <image wx:if="{{couponInfo_item.firstPayLogo==0&&couponInfo_item.beAboutToExpire}}" mode="widthFix" class="date_pass" src='../../img/ticket/date.png'></image>
+            <image mode="widthFix" src="../../img/common/right_cut@2x.png" class="right_cut"></image>
+            <image mode="widthFix" src="../../img/common/left_cut@2x.png" class="left_cut"></image>
+            <view class="ticket_item_top grey">
+              <!-- 三种优惠券 -->
+              <view class="ticket_name ">
+                {{couponInfo_item.name}}
+                <span wx:if="{{String(couponInfo_item.nameExt)&&String(couponInfo_item.nameExt)!='null'}}">{{String(couponInfo_item.nameExt)}}</span>
+              </view>
+              <!-- 两种有效期 -->
+              <view class="ticket_detail">
+                <span> {{couponInfo_item.limitTime}}</span>
+                <br/>
+                <span> {{couponInfo_item.limitTimeExplain}}</span>
+              </view>
+
+              <view class="ticket_value_part">
+                <!-- 两种折扣 -->
+                <section wx:if="{{couponInfo_item.couponType==2}}">
+                  <view class="ticket_value_discount">{{couponInfo_item.value1}}
+                    <span>
+                      <span wx:if="{{couponInfo_item.value2}}">.{{couponInfo_item.value2}}</span>折</span></view><view class="ticket_value_add">
+                    {{couponInfo_item.valueExplain}}
+                  </view>
+                </section>
+                  <section wx:if="{{couponInfo_item.couponType==6}}">
+                  <view class='coupon_discount_value'>
+                    <view class='coupon_discount_value_head_text'>降￥ </view>
+                    <view class="ticket_value_discount">{{couponInfo_item.value}}</view>
+                    <view style='margin-bottom:2px'> /L</view>
+                  </view>
+                  <view class="ticket_value_add">
+                    {{couponInfo_item.valueExplain}}
+                  </view>
+                </section>
+                <section wx:if="{{couponInfo_item.couponType==1||couponInfo_item.couponType==0}}">
+                  <view class="ticket_value_money">
+                    ￥
+                    <span> {{couponInfo_item.value}}</span>
+                  </view>
+                  <view class="ticket_value_add">
+                    {{couponInfo_item.valueExplain}}
+                  </view>
+                </section>
+              </view>
+
+            </view>
+            <view class="ticket_item_bottom possible_station ">
+              <!-- 不可用模块 -->
+              <view class='unavail' wx:if="{{couponInfo_item.unavailableCause}}">{{couponInfo_item.unavailableCause}}</view>
+            </view>
+          </view>
+        </section>
+        <view class="no_more_ticket_to_change">
+          没有更多优惠券了
+        </view>
+      </view>
+    </view>
+
+    <view class="no_more_ticket" wx:if="{{ticket_data.avlCouponNum==0&&ticket_data.invalidCouponNum==0}}">
+      <view class="box">
+        <view>暂无优惠券</view>
+        <view></view>
+
+      </view>
+
+    </view>
+  </view>
+</section>

@@ -1,0 +1,39 @@
+/* pages/setPwdSuccess/setPwdSuccess.wxss */
+
+page {
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.setting_success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.setting_success image {
+  width: 168rpx;
+  height: 168rpx;
+  margin-top: 300rpx;
+  margin-bottom: 56rpx;
+}
+
+.setting_success text {
+  font-size: 36rpx;
+  color: #222;
+  font-weight: bold;
+}
+
+.setting_success button{
+  width: 284rpx;
+  height: 80rpx;
+  margin-top: 62rpx;
+  background-color: white;
+  border: 1rpx solid orange;
+  line-height: 75rpx;
+  color: orange;
+  font-size: 34rpx;
+}
